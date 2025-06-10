@@ -11,7 +11,8 @@
           "Microsoft.AspNetCore.OData": "9.3.2",
           "Microsoft.AspNetCore.OpenApi": "9.0.4",
           "Microsoft.EntityFrameworkCore.SqlServer": "9.0.5",
-          "Microsoft.EntityFrameworkCore.Tools": "9.0.5"
+          "Microsoft.EntityFrameworkCore.Tools": "9.0.5",
+          "log4net": "3.1.0"
         },
         "runtime": {
           "GymFit.API.dll": {}
@@ -57,6 +58,17 @@
           "lib/net6.0/Humanizer.dll": {
             "assemblyVersion": "2.14.0.0",
             "fileVersion": "2.14.1.48190"
+          }
+        }
+      },
+      "log4net/3.1.0": {
+        "dependencies": {
+          "System.Configuration.ConfigurationManager": "6.0.1"
+        },
+        "runtime": {
+          "lib/netstandard2.0/log4net.dll": {
+            "assemblyVersion": "3.1.0.0",
+            "fileVersion": "3.1.0.0"
           }
         }
       },
@@ -1120,6 +1132,13 @@
       "sha512": "sha512-lQKvtaTDOXnoVJ20ibTuSIOf2i0uO0MPbDhd1jm238I+U/2ZnRENj0cktKZhtchBMtCUSRQ5v4xBCUbKNmyVMw==",
       "path": "humanizer.core/2.14.1",
       "hashPath": "humanizer.core.2.14.1.nupkg.sha512"
+    },
+    "log4net/3.1.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-GT7ZYyNcBNbMENUSSQsH8HkjrELe55UOwOkxMvUBfoSyq/K/c1SPi5aXCNHFqpyeCPlrq8nVx40z9pBVwnqkmA==",
+      "path": "log4net/3.1.0",
+      "hashPath": "log4net.3.1.0.nupkg.sha512"
     },
     "Microsoft.AspNetCore.OData/9.3.2": {
       "type": "package",

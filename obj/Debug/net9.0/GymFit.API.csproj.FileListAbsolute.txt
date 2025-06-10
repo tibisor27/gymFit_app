@@ -338,3 +338,6 @@
 /Users/tybyboiciuc/Desktop/gymFit_FullStack/GymFit_BE/obj/Debug/net9.0/GymFit.API.csproj.Up2Date
 /Users/tybyboiciuc/Desktop/gymFit_FullStack/GymFit_BE/obj/Debug/net9.0/GymFit.API.genruntimeconfig.cache
 /Users/tybyboiciuc/Desktop/gymFit_FullStack/GymFit_BE/obj/Debug/net9.0/ref/GymFit.API.dll
+/Users/tybyboiciuc/Desktop/gymFit_FullStack/GymFit_BE/obj/Debug/net9.0/GymFit.API.sourcelink.json
+/Users/tybyboiciuc/Desktop/gymFit_FullStack/GymFit_BE/bin/Debug/net9.0/log4net.config
+/Users/tybyboiciuc/Desktop/gymFit_FullStack/GymFit_BE/bin/Debug/net9.0/log4net.dll
