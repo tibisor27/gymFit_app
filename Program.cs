@@ -1,43 +1,44 @@
+using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.OData;
 using Microsoft.OData.Edm;
 using Microsoft.OData.ModelBuilder;
-using GymFit.API.Models;
+using GymFit.BE.Data;
+using GymFit.BE.Models;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
+builder.Services.AddControllers()
+    .AddOData(options =>
+    {
+        options.Select().Filter().OrderBy().Expand().Count().SetMaxTop(100);
+        options.AddRouteComponents("odata", GetEdmModel());
+    });
 
-// Configure OData
-builder.Services.AddControllers().AddOData(options =>
+builder.Services.AddDbContext<GymFitDbContext>(options =>
+    options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
+
+builder.Services.AddCors(options =>
 {
-    options.Select().Filter().OrderBy().Count().SetMaxTop(100);
-    options.AddRouteComponents("odata", GetEdmModel());
-
+    options.AddDefaultPolicy(policy =>
+    {
+        policy.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader();
+    });
 });
 
-// Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
-builder.Services.AddOpenApi();
+var app = builder.Build();
+
+app.UseCors();
+app.MapControllers();
+
+
+app.Run();
 
 static IEdmModel GetEdmModel()
 {
     var builder = new ODataConventionModelBuilder();
+    
+    // Înregistrează User pentru OData
     builder.EntitySet<User>("Users");
-    builder.EntitySet<GymClass>("GymClasses");
+    
     return builder.GetEdmModel();
 }
-
-var app = builder.Build();
-
-// Configure the HTTP request pipeline.
-if (app.Environment.IsDevelopment())
-{
-    app.MapOpenApi();
-}
-
-app.UseHttpsRedirection();
-
-app.UseAuthorization();
-
-app.MapControllers();
-
-app.Run();
