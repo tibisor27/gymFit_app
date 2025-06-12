@@ -30,4 +30,14 @@ namespace GymFit.BE.DTOs
         public Role UserRole { get; set; }
         public DateOnly DateOfBirth { get; set; }
     }
+
+    // DTO pentru PATCH - actualizare parțială (toate opționale!)
+    public class UpdateUserDTO
+    {
+        public string? Name { get; set; }           // ✅ NULL = nu se modifică
+        public string? Email { get; set; }          // ✅ NULL = nu se modifică  
+        public Role? UserRole { get; set; }         // ✅ NULL = nu se modifică
+        public string? PhoneNumber { get; set; }    // ✅ NULL = nu se modifică
+        public DateOnly? DateOfBirth { get; set; }  // ✅ NULL = nu se modifică
+    }
 } 
