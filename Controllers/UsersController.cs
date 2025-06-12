@@ -1,10 +1,13 @@
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.OData.Query;
-using Microsoft.AspNetCore.OData.Routing.Controllers;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.OData.Routing.Controllers;
+using Microsoft.AspNetCore.OData.Query;
 using GymFit.BE.Models;
 using GymFit.BE.Data;
+using GymFit.BE.DTOs;
 using log4net;
+using System.Security.Cryptography;
+using System.Text;
 
 namespace GymFit.BE.Controllers
 {
@@ -19,7 +22,6 @@ namespace GymFit.BE.Controllers
             _logger = LogManager.GetLogger(typeof(UsersController));
         }
 
-        [HttpGet]
         [EnableQuery]
         public async Task<IActionResult> Get()
         {
@@ -27,7 +29,18 @@ namespace GymFit.BE.Controllers
             {
                 _logger.Info("Getting all users");
                 var users = await _context.Users.ToListAsync();
-                return Ok(users);
+                
+                var userDTOs = users.Select(u => new UserDTO
+                {
+                    Id = u.Id,
+                    Name = u.Name,
+                    Email = u.Email,
+                    PhoneNumber = u.PhoneNumber,
+                    UserRole = u.UserRole,
+                    DateOfBirth = u.DateOfBirth
+                }).ToList();
+                
+                return Ok(userDTOs);
             }
             catch (Exception ex)
             {
@@ -36,49 +49,158 @@ namespace GymFit.BE.Controllers
             }
         }
 
-        [HttpGet("{id}")]
         [EnableQuery]
-        public async Task<IActionResult> Get(int id)
+        public async Task<IActionResult> Get(int key)
         {
             try
             {
-                _logger.Info($"Getting user with ID: {id}");
-                var user = await _context.Users.FindAsync(id);
+                _logger.Info($"Getting user with ID: {key}");
+                var user = await _context.Users.FindAsync(key);
                 
                 if (user == null)
                 {
-                    return NotFound($"User with ID {id} not found");
+                    return NotFound($"User with ID {key} not found");
                 }
                 
-                return Ok(user);
+                var userDTO = new UserDTO
+                {
+                    Id = user.Id,
+                    Name = user.Name,
+                    Email = user.Email,
+                    PhoneNumber = user.PhoneNumber,
+                    UserRole = user.UserRole,
+                    DateOfBirth = user.DateOfBirth
+                };
+                
+                return Ok(userDTO);
             }
             catch (Exception ex)
             {
-                _logger.Error($"Error getting user {id}", ex);
+                _logger.Error($"Error getting user {key}", ex);
                 return StatusCode(500, "Internal server error");
             }
         }
 
-        [HttpPost]
-        public async Task<IActionResult> Post([FromBody] User user)
+        public async Task<IActionResult> Post([FromBody] CreateUserDTO createUserDTO)
         {
             try
             {
-                if (!ModelState.IsValid)
+                _logger.Info("=== POST REQUEST STARTED ===");
+                _logger.Info($"Creating user: {createUserDTO.Email}");
+                
+                if (createUserDTO == null)
                 {
-                    return BadRequest(ModelState);
+                    return BadRequest("User data is required");
                 }
 
-                _logger.Info($"Creating new user: {user.Email}");
+                var existingUser = await _context.Users.FirstOrDefaultAsync(u => u.Email == createUserDTO.Email);
+                if (existingUser != null)
+                {
+                    _logger.Error($"❌ Email already exists: {createUserDTO.Email}");
+                    return BadRequest($"Email {createUserDTO.Email} already exists");
+                }
+
+                string hashedPassword = HashPassword(createUserDTO.Password);
+
+                var user = new User
+                {
+                    Name = createUserDTO.Name,
+                    Email = createUserDTO.Email,
+                    Password = hashedPassword,
+                    UserRole = createUserDTO.UserRole,
+                    PhoneNumber = createUserDTO.PhoneNumber,
+                    DateOfBirth = createUserDTO.DateOfBirth
+                };
+
+                _logger.Info($"✅ Validation passed - Creating user: {user.Email}");
                 
                 _context.Users.Add(user);
                 await _context.SaveChangesAsync();
                 
-                return Created($"/odata/Users/{user.Id}", user);
+                _logger.Info($"✅ User created successfully with ID: {user.Id}");
+                
+                var userDTO = new UserDTO
+                {
+                    Id = user.Id,
+                    Name = user.Name,
+                    Email = user.Email,
+                    PhoneNumber = user.PhoneNumber,
+                    UserRole = user.UserRole,
+                    DateOfBirth = user.DateOfBirth
+                };
+                
+                return Ok(userDTO); // SIMPLU! Fără OData Created
             }
             catch (Exception ex)
             {
-                _logger.Error("Error creating user", ex);
+                _logger.Error($"❌ EXCEPTION in POST: {ex.Message}");
+                _logger.Error($"Stack trace: {ex.StackTrace}");
+                
+                return StatusCode(500, new { 
+                    message = "Internal server error", 
+                    error = ex.Message 
+                });
+            }
+        }
+
+        private string HashPassword(string password)
+        {
+            using (var sha256 = SHA256.Create())
+            {
+                byte[] hashedBytes = sha256.ComputeHash(Encoding.UTF8.GetBytes(password));
+                return Convert.ToBase64String(hashedBytes);
+            }
+        }
+
+        public async Task<IActionResult> Put(int key, [FromBody] UserDTO userDTO)
+        {
+            try
+            {
+                if (key != userDTO.Id)
+                {
+                    return BadRequest("ID mismatch");
+                }
+
+                var existingUser = await _context.Users.FindAsync(key);
+                if (existingUser == null)
+                {
+                    return NotFound($"User with ID {key} not found");
+                }
+
+                existingUser.Name = userDTO.Name;
+                existingUser.Email = userDTO.Email;
+                existingUser.UserRole = userDTO.UserRole;
+                existingUser.PhoneNumber = userDTO.PhoneNumber;
+                existingUser.DateOfBirth = userDTO.DateOfBirth;
+
+                await _context.SaveChangesAsync();
+                
+                return Updated(userDTO);
+            }
+            catch (Exception ex)
+            {
+                _logger.Error($"Error updating user {key}", ex);
+                return StatusCode(500, "Internal server error");
+            }
+        }
+
+        public async Task<IActionResult> Delete(int key)
+        {
+            try
+            {
+                var user = await _context.Users.FindAsync(key);
+                if (user == null)
+                {
+                    return NotFound($"User with ID {key} not found");
+                }
+
+                _context.Users.Remove(user);
+                await _context.SaveChangesAsync();
+                return NoContent();
+            }
+            catch (Exception ex)
+            {
+                _logger.Error($"Error deleting user {key}", ex);
                 return StatusCode(500, "Internal server error");
             }
         }

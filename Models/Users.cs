@@ -36,9 +36,9 @@ namespace GymFit.BE.Models
 
     public enum Role
     {
-        Admin = 0,
-        User = 1,
-        Trainer = 2
+        Admin = 0,     // Administrator al sălii
+        Member = 1,    // Membru/Client al sălii  
+        Trainer = 2    // Antrenor/Trainer
     }
 }
 

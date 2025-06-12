@@ -9,7 +9,7 @@ namespace GymFit.BE.Models
 
         [Required]
         public int UserId { get; set; }
-        public required User User { get; set; }
+        public User User { get; set; } = null!;
 
         public bool IsActive { get; set; } = true;
         public DateTime JoinedAt { get; set; } = DateTime.Now;

@@ -1,0 +1,76 @@
+2025-06-12 13:40:51,212 [11] INFO  GymFit.BE.Controllers.UsersController - Getting all users
+2025-06-12 13:41:05,345 [7] INFO  GymFit.BE.Controllers.UsersController - === POST REQUEST STARTED ===
+2025-06-12 13:41:05,346 [7] INFO  GymFit.BE.Controllers.UsersController - Raw JSON received: {
+  "Name": "Tyby",
+  "Email": "test@test.com",
+  "Password": "test123",
+  "UserRole": 0,
+  "PhoneNumber": "123456789",
+  "DateOfBirth": "1990-01-01"
+}
+2025-06-12 13:41:05,346 [7] INFO  GymFit.BE.Controllers.UsersController - Content-Type: application/json
+2025-06-12 13:41:05,358 [7] INFO  GymFit.BE.Controllers.UsersController - Deserialized user: Name=Tyby, Email=test@test.com, UserRole=Admin
+2025-06-12 13:41:05,358 [7] INFO  GymFit.BE.Controllers.UsersController - ✅ Validation passed - Creating user: test@test.com
+2025-06-12 13:41:05,467 [7] ERROR GymFit.BE.Controllers.UsersController - ❌ EXCEPTION in POST: An error occurred while saving the entity changes. See the inner exception for details.
+2025-06-12 13:41:05,468 [7] ERROR GymFit.BE.Controllers.UsersController - Stack trace:    at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalDatabase.SaveChangesAsync(IList`1 entries, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Npgsql.EntityFrameworkCore.PostgreSQL.Storage.Internal.NpgsqlExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at GymFit.BE.Controllers.UsersController.Post() in /Users/tybyboiciuc/Desktop/gymFit_FullStack/GymFit_BE/Controllers/UsersController.cs:line 133
+2025-06-12 13:44:11,670 [11] INFO  GymFit.BE.Controllers.UsersController - Getting all users
+2025-06-12 13:44:16,935 [11] INFO  GymFit.BE.Controllers.UsersController - === POST REQUEST STARTED ===
+2025-06-12 13:44:16,935 [11] INFO  GymFit.BE.Controllers.UsersController - Creating user: test@test.com
+2025-06-12 13:44:17,030 [11] ERROR GymFit.BE.Controllers.UsersController - ❌ Email already exists: test@test.com
+2025-06-12 13:44:21,690 [11] INFO  GymFit.BE.Controllers.UsersController - === POST REQUEST STARTED ===
+2025-06-12 13:44:21,690 [11] INFO  GymFit.BE.Controllers.UsersController - Creating user: danut@test.com
+2025-06-12 13:44:21,744 [11] INFO  GymFit.BE.Controllers.UsersController - ✅ Validation passed - Creating user: danut@test.com
+2025-06-12 13:44:21,832 [11] INFO  GymFit.BE.Controllers.UsersController - ✅ User created successfully with ID: 5
+2025-06-12 13:46:55,397 [11] INFO  GymFit.BE.Controllers.UsersController - Getting all users
+2025-06-12 13:47:04,229 [10] INFO  GymFit.BE.Controllers.UsersController - === POST REQUEST STARTED ===
+2025-06-12 13:47:04,229 [10] INFO  GymFit.BE.Controllers.UsersController - Creating user: danut@test.com
+2025-06-12 13:47:04,316 [10] ERROR GymFit.BE.Controllers.UsersController - ❌ Email already exists: danut@test.com
+2025-06-12 13:47:08,213 [10] INFO  GymFit.BE.Controllers.UsersController - === POST REQUEST STARTED ===
+2025-06-12 13:47:08,213 [10] INFO  GymFit.BE.Controllers.UsersController - Creating user: danutu@test.com
+2025-06-12 13:47:08,269 [10] INFO  GymFit.BE.Controllers.UsersController - ✅ Validation passed - Creating user: danutu@test.com
+2025-06-12 13:47:08,363 [10] INFO  GymFit.BE.Controllers.UsersController - ✅ User created successfully with ID: 6
+2025-06-12 15:32:31,405 [11] INFO  GymFit.BE.Controllers.UsersController - Getting all users
+2025-06-12 15:32:42,956 [11] INFO  GymFit.BE.Controllers.UsersController - === POST REQUEST STARTED ===
+2025-06-12 15:32:42,956 [11] INFO  GymFit.BE.Controllers.UsersController - Creating user: danutu@test.com
+2025-06-12 15:32:43,042 [11] ERROR GymFit.BE.Controllers.UsersController - ❌ Email already exists: danutu@test.com
+2025-06-12 15:32:48,114 [11] INFO  GymFit.BE.Controllers.UsersController - === POST REQUEST STARTED ===
+2025-06-12 15:32:48,114 [11] INFO  GymFit.BE.Controllers.UsersController - Creating user: danutuU@test.com
+2025-06-12 15:32:48,165 [11] INFO  GymFit.BE.Controllers.UsersController - ✅ Validation passed - Creating user: danutuU@test.com
+2025-06-12 15:32:48,279 [11] INFO  GymFit.BE.Controllers.UsersController - ✅ User created successfully with ID: 7
+2025-06-12 15:33:07,681 [11] INFO  GymFit.BE.Controllers.UsersController - Getting all users
+2025-06-12 15:37:23,865 [14] INFO  GymFit.BE.Controllers.UsersController - Getting user with ID: 6
+2025-06-12 15:37:25,703 [14] INFO  GymFit.BE.Controllers.UsersController - Getting all users
+2025-06-12 16:03:39,785 [26] INFO  GymFit.BE.Controllers.UsersController - Getting all users
+2025-06-12 16:04:08,205 [26] INFO  GymFit.BE.Controllers.UsersController - Getting all users
+2025-06-12 16:04:14,278 [26] INFO  GymFit.BE.Controllers.UsersController - Getting user with ID: 1
+2025-06-12 16:04:18,522 [26] INFO  GymFit.BE.Controllers.UsersController - Getting user with ID: 7
+2025-06-12 16:04:43,481 [10] INFO  GymFit.BE.Controllers.UsersController - Getting all users
+2025-06-12 16:05:57,146 [11] INFO  GymFit.BE.Controllers.UsersController - Getting all users
+2025-06-12 16:06:14,047 [7] INFO  GymFit.BE.Controllers.UsersController - Getting all users
+2025-06-12 16:09:28,847 [11] INFO  GymFit.BE.Controllers.UsersController - === POST REQUEST STARTED ===
+2025-06-12 16:09:28,849 [11] INFO  GymFit.BE.Controllers.UsersController - Creating user: test@test.com
+2025-06-12 16:09:29,661 [11] INFO  GymFit.BE.Controllers.UsersController - ✅ Validation passed - Creating user: test@test.com
+2025-06-12 16:09:29,771 [11] INFO  GymFit.BE.Controllers.UsersController - ✅ User created successfully with ID: 8
+2025-06-12 16:09:34,937 [11] INFO  GymFit.BE.Controllers.UsersController - Getting all users
+2025-06-12 16:09:54,846 [12] INFO  GymFit.BE.Controllers.UsersController - Getting all users
+2025-06-12 16:35:24,850 [21] INFO  GymFit.BE.Controllers.UsersController - Getting all users
+2025-06-12 16:48:57,160 [17] INFO  GymFit.BE.Controllers.UsersController - Getting all users
+2025-06-12 16:57:59,848 [7] INFO  GymFit.BE.Controllers.UsersController - Getting all users
+2025-06-12 16:58:07,712 [7] INFO  GymFit.BE.Controllers.UsersController - Getting user with ID: 8
+2025-06-12 16:58:10,457 [7] INFO  GymFit.BE.Controllers.UsersController - Getting all users
+2025-06-12 16:58:35,059 [7] INFO  GymFit.BE.Controllers.UsersController - Getting all users
+2025-06-12 16:58:39,466 [7] INFO  GymFit.BE.Controllers.UsersController - Getting all users
+2025-06-12 16:58:47,064 [13] INFO  GymFit.BE.Controllers.UsersController - Getting user with ID: 7
+2025-06-12 16:58:49,269 [13] INFO  GymFit.BE.Controllers.UsersController - Getting user with ID: 7
+2025-06-12 16:58:55,470 [7] INFO  GymFit.BE.Controllers.UsersController - Getting user with ID: 7
+2025-06-12 16:59:45,456 [3] INFO  GymFit.BE.Controllers.UsersController - Getting user with ID: 8
