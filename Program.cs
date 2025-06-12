@@ -15,7 +15,7 @@ builder.Services.AddControllers()
     });
 
 builder.Services.AddDbContext<GymFitDbContext>(options =>
-    options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
+    options.UseNpgsql(builder.Configuration.GetConnectionString("gymFitConnection")));
 
 builder.Services.AddCors(options =>
 {
@@ -30,15 +30,20 @@ var app = builder.Build();
 app.UseCors();
 app.MapControllers();
 
-
 app.Run();
 
 static IEdmModel GetEdmModel()
 {
     var builder = new ODataConventionModelBuilder();
     
-    // Înregistrează User pentru OData
+    // Înregistrează toate entitățile pentru OData
     builder.EntitySet<User>("Users");
+    builder.EntitySet<Members>("Members");
+    builder.EntitySet<Trainers>("Trainers");
+    builder.EntitySet<Session>("Sessions");
+    builder.EntitySet<Membership>("Memberships");
+    builder.EntitySet<MembershipType>("MembershipTypes");
+    builder.EntitySet<GymClass>("GymClasses");
     
     return builder.GetEdmModel();
 }
