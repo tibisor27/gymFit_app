@@ -1,4 +1,5 @@
 using GymFit.BE.Models;
+using System.ComponentModel.DataAnnotations;
 
 namespace GymFit.BE.DTOs
 {
@@ -34,10 +35,19 @@ namespace GymFit.BE.DTOs
     // DTO pentru PATCH - actualizare parțială (toate opționale!)
     public class UpdateUserDTO
     {
-        public string? Name { get; set; }           // ✅ NULL = nu se modifică
-        public string? Email { get; set; }          // ✅ NULL = nu se modifică  
-        public Role? UserRole { get; set; }         // ✅ NULL = nu se modifică
-        public string? PhoneNumber { get; set; }    // ✅ NULL = nu se modifică
-        public DateOnly? DateOfBirth { get; set; }  // ✅ NULL = nu se modifică
+        [MinLength(2, ErrorMessage = "Numele trebuie să aibă minim 2 caractere")]
+        [MaxLength(100, ErrorMessage = "Numele nu poate depăși 100 caractere")]
+        public string? Name { get; set; }
+
+        [EmailAddress(ErrorMessage = "Format email invalid")]
+        public string? Email { get; set; }
+
+        public Role? UserRole { get; set; }
+
+        [Phone(ErrorMessage = "Format număr telefon invalid")]
+        [RegularExpression(@"^(\+4|0)[0-9]{9}$", ErrorMessage = "Numărul de telefon trebuie să fie format românesc")]
+        public string? PhoneNumber { get; set; }
+
+        public DateOnly? DateOfBirth { get; set; }
     }
 } 

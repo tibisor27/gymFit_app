@@ -184,6 +184,97 @@ namespace GymFit.BE.Controllers
             }
         }
 
+        // ✅ PATCH = Actualizare PARȚIALĂ!
+        [HttpPatch]
+        public async Task<IActionResult> Patch(int key, [FromBody] UpdateUserDTO updateDto)
+        {
+            try
+            {
+                _logger.Info($"PATCH request for user {key}");
+                
+                if (!ModelState.IsValid)
+                {
+                    _logger.Error($"Invalid model state for user {key}");
+                    return BadRequest(ModelState);
+                }
+
+                if (updateDto.DateOfBirth.HasValue && updateDto.DateOfBirth.Value > DateOnly.FromDateTime(DateTime.Now.AddYears(-16)))
+                {
+                    return BadRequest("Utilizatorul trebuie să aibă minim 16 ani");
+                }
+
+                if (updateDto.Email != null)
+                {
+                    // Verific dacă email-ul există deja la alt user
+                    var emailExists = await _context.Users.AnyAsync(u => u.Email == updateDto.Email && u.Id != key);
+                    if (emailExists)
+                    {
+                        return BadRequest("Email-ul este deja folosit");
+                    }
+                }
+                
+                // Găsesc user-ul existent
+                var existingUser = await _context.Users.FindAsync(key);
+                if (existingUser == null)
+                {
+                    return NotFound($"User with ID {key} not found");
+                }
+
+                // ✅ ACTUALIZEZ DOAR câmpurile care NU sunt NULL!
+                if (updateDto.Name != null)
+                {
+                    existingUser.Name = updateDto.Name;
+                    _logger.Info($"Updated name to: {updateDto.Name}");
+                }
+                
+                if (updateDto.Email != null)
+                {
+                    existingUser.Email = updateDto.Email;
+                    _logger.Info($"Updated email to: {updateDto.Email}");
+                }
+                
+                if (updateDto.UserRole.HasValue)  // Pentru enum nullable
+                {
+                    existingUser.UserRole = updateDto.UserRole.Value;
+                    _logger.Info($"Updated role to: {updateDto.UserRole}");
+                }
+                
+                if (updateDto.PhoneNumber != null)
+                {
+                    existingUser.PhoneNumber = updateDto.PhoneNumber;
+                    _logger.Info($"Updated phone to: {updateDto.PhoneNumber}");
+                }
+                
+                if (updateDto.DateOfBirth.HasValue)  // Pentru DateOnly nullable
+                {
+                    existingUser.DateOfBirth = updateDto.DateOfBirth.Value;
+                    _logger.Info($"Updated birth date to: {updateDto.DateOfBirth}");
+                }
+
+                // Salvez modificările
+                await _context.SaveChangesAsync();
+                
+                // Returnez DTO-ul actualizat
+                var userDTO = new UserDTO
+                {
+                    Id = existingUser.Id,
+                    Name = existingUser.Name,
+                    Email = existingUser.Email,
+                    PhoneNumber = existingUser.PhoneNumber,
+                    UserRole = existingUser.UserRole,
+                    DateOfBirth = existingUser.DateOfBirth
+                };
+                
+                _logger.Info($"✅ User {key} updated successfully");
+                return Ok(userDTO);
+            }
+            catch (Exception ex)
+            {
+                _logger.Error($"❌ Error in PATCH user {key}: {ex.Message}");
+                return StatusCode(500, "Internal server error");
+            }
+        }
+
         public async Task<IActionResult> Delete(int key)
         {
             try
