@@ -1,8 +1,8 @@
 {
   "Version": 1,
-  "Hash": "mbsZ7BKOs2vO+7NpT2EGoYb6IIoj0RNeeMX1DFYYGnc=",
-  "Source": "GymFit.API",
-  "BasePath": "_content/GymFit.API",
+  "Hash": "4A7R+3+FWMvk01azh8yfuo4TylFH7ui5xeGN+tzHCe0=",
+  "Source": "GymFit.BE",
+  "BasePath": "_content/GymFit.BE",
   "Mode": "Default",
   "ManifestType": "Build",
   "ReferencedProjectsConfiguration": [],
