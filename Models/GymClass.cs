@@ -16,6 +16,7 @@ namespace GymFit.BE.Models
         public string? Description { get; set; } // Descriere detaliată
 
         [Required]
+        [StringLength(50)]
         public required string Category { get; set; } // "Fitness", "Wellness", "Martial Arts"
 
 

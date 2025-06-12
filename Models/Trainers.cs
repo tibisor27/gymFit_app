@@ -4,24 +4,24 @@ using GymFit.BE.Models;
 namespace GymFit.BE.Models
 {
     public class Trainers
-{
-    public int Id { get; set; }
-    [Required(ErrorMessage = "User is required")]
-    public int UserId { get; set; }
+    {
+        [Key]
+        public int Id { get; set; }
 
         [Required(ErrorMessage = "User is required")]
-    public required User User { get; set; }
+        public int UserId { get; set; }
+        public required User User { get; set; }
 
-    [Required(ErrorMessage = "Specialization is required")]
-    [StringLength(100, MinimumLength = 2, ErrorMessage = "Specialization must be between 2 and 100 characters")]
-    public required GymClass GymClass { get; set; }
+        [Required(ErrorMessage = "Experience is required")]
+        [StringLength(200, MinimumLength = 5, ErrorMessage = "Experience must be between 5 and 200 characters")]
+        public required string Experience { get; set; }
 
-    [Required(ErrorMessage = "Availability is required")]
-    [RegularExpression(@"^([A-Za-z]+:\s*[0-9]{1,2}:[0-9]{2}\s*-\s*[0-9]{1,2}:[0-9]{2}\s*,\s*)*([A-Za-z]+:\s*[0-9]{1,2}:[0-9]{2}\s*-\s*[0-9]{1,2}:[0-9]{2})$",
-        ErrorMessage = "Availability must be in format 'Day: HH:MM-HH:MM, Day: HH:MM-HH:MM'")]
-    public required string Availability { get; set; }
+        [Required(ErrorMessage = "Introduction is required")]
+        [StringLength(500, MinimumLength = 10, ErrorMessage = "Introduction must be between 10 and 500 characters")]
+        public required string Introduction { get; set; }
 
-    [Required(ErrorMessage = "TimeSlots is required")]
-    public required ICollection<TimeSlot> TimeSlots { get; set; }
+        // Navigation properties - relațiile efective
+        public ICollection<Session> Sessions { get; set; } = new List<Session>();
+
     }
 }
