@@ -108,3 +108,595 @@
 2025-06-12 18:03:34,379 [20] INFO  GymFit.BE.Controllers.UsersController - Updated role to: Trainer
 2025-06-12 18:03:34,411 [20] INFO  GymFit.BE.Controllers.UsersController - ✅ User 7 updated successfully
 2025-06-12 18:03:41,404 [22] INFO  GymFit.BE.Controllers.UsersController - Getting user with ID: 7
+2025-06-13 09:29:32,938 [11] INFO  GymFit.BE.Controllers.UsersController - Getting user with ID: 7
+2025-06-13 09:29:37,761 [10] INFO  GymFit.BE.Controllers.UsersController - Getting all users
+2025-06-13 09:29:53,519 [7] INFO  GymFit.BE.Controllers.UsersController - Getting user with ID: 8
+2025-06-13 09:30:01,589 [7] INFO  GymFit.BE.Controllers.UsersController - Getting all users
+2025-06-13 09:35:13,940 [12] INFO  TrainersController - Getting all trainers
+2025-06-13 09:35:29,390 [12] INFO  GymFit.BE.Controllers.UsersController - === POST REQUEST STARTED ===
+2025-06-13 09:35:29,390 [12] INFO  GymFit.BE.Controllers.UsersController - Creating user: 
+2025-06-13 09:35:29,499 [12] INFO  GymFit.BE.Controllers.UsersController - ✅ Validation passed - Creating user: 
+2025-06-13 09:35:29,604 [12] INFO  GymFit.BE.Controllers.UsersController - ✅ User created successfully with ID: 9
+2025-06-13 09:35:45,216 [12] INFO  TrainersController - Getting all trainers
+2025-06-13 09:37:33,563 [14] INFO  GymFit.BE.Controllers.UsersController - === POST REQUEST STARTED ===
+2025-06-13 09:37:33,563 [14] INFO  GymFit.BE.Controllers.UsersController - Creating user: tyby.boiciuc03@e-uvt.ro
+2025-06-13 09:37:33,595 [12] INFO  GymFit.BE.Controllers.UsersController - ✅ Validation passed - Creating user: tyby.boiciuc03@e-uvt.ro
+2025-06-13 09:37:33,632 [12] INFO  GymFit.BE.Controllers.UsersController - ✅ User created successfully with ID: 10
+2025-06-13 09:37:41,639 [12] INFO  GymFit.BE.Controllers.UsersController - Getting all users
+2025-06-13 09:37:51,894 [14] INFO  TrainersController - Getting all trainers
+2025-06-13 09:42:42,107 [22] INFO  GymFit.BE.Controllers.UsersController - Getting all users
+2025-06-13 10:15:20,490 [11] INFO  GymFit.BE.Controllers.UsersController - Getting all users
+2025-06-13 10:15:42,918 [14] INFO  TrainersController - Getting all trainers
+2025-06-13 10:15:43,061 [14] ERROR TrainersController - Error getting trainers
+Npgsql.PostgresException (0x80004005): 42703: column t.UserId1 does not exist
+
+POSITION: 62
+   at Npgsql.Internal.NpgsqlConnector.ReadMessageLong(Boolean async, DataRowLoadingMode dataRowLoadingMode, Boolean readingNotifications, Boolean isReadingPrependedMessage)
+   at System.Runtime.CompilerServices.PoolingAsyncValueTaskMethodBuilder`1.StateMachineBox`1.System.Threading.Tasks.Sources.IValueTaskSource<TResult>.GetResult(Int16 token)
+   at Npgsql.NpgsqlDataReader.NextResult(Boolean async, Boolean isConsuming, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlDataReader.NextResult(Boolean async, Boolean isConsuming, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(Boolean async, CommandBehavior behavior, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(Boolean async, CommandBehavior behavior, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteDbDataReaderAsync(CommandBehavior behavior, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Npgsql.EntityFrameworkCore.PostgreSQL.Storage.Internal.NpgsqlExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+   at Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions.ToListAsync[TSource](IQueryable`1 source, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions.ToListAsync[TSource](IQueryable`1 source, CancellationToken cancellationToken)
+   at TrainersController.Get() in /Users/tybyboiciuc/Desktop/gymFit_FullStack/GymFit_BE/Controllers/TrainersController.cs:line 28
+  Exception data:
+    Severity: ERROR
+    SqlState: 42703
+    MessageText: column t.UserId1 does not exist
+    Hint: Perhaps you meant to reference the column "t.UserId".
+    Position: 62
+    File: parse_relation.c
+    Line: 3729
+    Routine: errorMissingColumn
+2025-06-13 10:16:22,250 [14] INFO  TrainersController - Getting all trainers
+2025-06-13 10:16:22,302 [14] ERROR TrainersController - Error getting trainers
+Npgsql.PostgresException (0x80004005): 42703: column t.UserId1 does not exist
+
+POSITION: 62
+   at Npgsql.Internal.NpgsqlConnector.ReadMessageLong(Boolean async, DataRowLoadingMode dataRowLoadingMode, Boolean readingNotifications, Boolean isReadingPrependedMessage)
+   at System.Runtime.CompilerServices.PoolingAsyncValueTaskMethodBuilder`1.StateMachineBox`1.System.Threading.Tasks.Sources.IValueTaskSource<TResult>.GetResult(Int16 token)
+   at Npgsql.NpgsqlDataReader.NextResult(Boolean async, Boolean isConsuming, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlDataReader.NextResult(Boolean async, Boolean isConsuming, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(Boolean async, CommandBehavior behavior, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(Boolean async, CommandBehavior behavior, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteDbDataReaderAsync(CommandBehavior behavior, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Npgsql.EntityFrameworkCore.PostgreSQL.Storage.Internal.NpgsqlExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+   at Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions.ToListAsync[TSource](IQueryable`1 source, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions.ToListAsync[TSource](IQueryable`1 source, CancellationToken cancellationToken)
+   at TrainersController.Get() in /Users/tybyboiciuc/Desktop/gymFit_FullStack/GymFit_BE/Controllers/TrainersController.cs:line 28
+  Exception data:
+    Severity: ERROR
+    SqlState: 42703
+    MessageText: column t.UserId1 does not exist
+    Hint: Perhaps you meant to reference the column "t.UserId".
+    Position: 62
+    File: parse_relation.c
+    Line: 3729
+    Routine: errorMissingColumn
+2025-06-13 10:16:23,165 [16] INFO  TrainersController - Getting all trainers
+2025-06-13 10:16:23,221 [14] ERROR TrainersController - Error getting trainers
+Npgsql.PostgresException (0x80004005): 42703: column t.UserId1 does not exist
+
+POSITION: 62
+   at Npgsql.Internal.NpgsqlConnector.ReadMessageLong(Boolean async, DataRowLoadingMode dataRowLoadingMode, Boolean readingNotifications, Boolean isReadingPrependedMessage)
+   at System.Runtime.CompilerServices.PoolingAsyncValueTaskMethodBuilder`1.StateMachineBox`1.System.Threading.Tasks.Sources.IValueTaskSource<TResult>.GetResult(Int16 token)
+   at Npgsql.NpgsqlDataReader.NextResult(Boolean async, Boolean isConsuming, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlDataReader.NextResult(Boolean async, Boolean isConsuming, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(Boolean async, CommandBehavior behavior, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(Boolean async, CommandBehavior behavior, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteDbDataReaderAsync(CommandBehavior behavior, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Npgsql.EntityFrameworkCore.PostgreSQL.Storage.Internal.NpgsqlExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+   at Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions.ToListAsync[TSource](IQueryable`1 source, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions.ToListAsync[TSource](IQueryable`1 source, CancellationToken cancellationToken)
+   at TrainersController.Get() in /Users/tybyboiciuc/Desktop/gymFit_FullStack/GymFit_BE/Controllers/TrainersController.cs:line 28
+  Exception data:
+    Severity: ERROR
+    SqlState: 42703
+    MessageText: column t.UserId1 does not exist
+    Hint: Perhaps you meant to reference the column "t.UserId".
+    Position: 62
+    File: parse_relation.c
+    Line: 3729
+    Routine: errorMissingColumn
+2025-06-13 10:16:54,893 [16] INFO  GymFit.BE.Controllers.UsersController - Getting all users
+2025-06-13 10:17:06,555 [16] INFO  TrainersController - Getting all trainers
+2025-06-13 10:17:06,591 [17] ERROR TrainersController - Error getting trainers
+Npgsql.PostgresException (0x80004005): 42703: column t.UserId1 does not exist
+
+POSITION: 62
+   at Npgsql.Internal.NpgsqlConnector.ReadMessageLong(Boolean async, DataRowLoadingMode dataRowLoadingMode, Boolean readingNotifications, Boolean isReadingPrependedMessage)
+   at System.Runtime.CompilerServices.PoolingAsyncValueTaskMethodBuilder`1.StateMachineBox`1.System.Threading.Tasks.Sources.IValueTaskSource<TResult>.GetResult(Int16 token)
+   at Npgsql.NpgsqlDataReader.NextResult(Boolean async, Boolean isConsuming, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlDataReader.NextResult(Boolean async, Boolean isConsuming, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(Boolean async, CommandBehavior behavior, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(Boolean async, CommandBehavior behavior, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteDbDataReaderAsync(CommandBehavior behavior, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Npgsql.EntityFrameworkCore.PostgreSQL.Storage.Internal.NpgsqlExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+   at Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions.ToListAsync[TSource](IQueryable`1 source, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions.ToListAsync[TSource](IQueryable`1 source, CancellationToken cancellationToken)
+   at TrainersController.Get() in /Users/tybyboiciuc/Desktop/gymFit_FullStack/GymFit_BE/Controllers/TrainersController.cs:line 28
+  Exception data:
+    Severity: ERROR
+    SqlState: 42703
+    MessageText: column t.UserId1 does not exist
+    Hint: Perhaps you meant to reference the column "t.UserId".
+    Position: 62
+    File: parse_relation.c
+    Line: 3729
+    Routine: errorMissingColumn
+2025-06-13 10:17:18,068 [16] INFO  TrainersController - 🏋️ POST trainer for user 123
+2025-06-13 10:17:23,009 [16] INFO  TrainersController - 🏋️ POST trainer for user 10
+2025-06-13 10:17:23,082 [16] ERROR TrainersController - ❌ Error creating trainer: 42703: column t.UserId1 does not exist
+
+POSITION: 62
+2025-06-13 10:27:51,135 [11] INFO  TrainersController - 🏋️ POST trainer for user 10
+2025-06-13 10:27:52,068 [11] ERROR TrainersController - ❌ Error creating trainer: 42703: column t.UserId1 does not exist
+
+POSITION: 62
+2025-06-13 10:27:56,214 [11] INFO  TrainersController - Getting all trainers
+2025-06-13 10:27:56,254 [11] ERROR TrainersController - Error getting trainers
+Npgsql.PostgresException (0x80004005): 42703: column t.UserId1 does not exist
+
+POSITION: 62
+   at Npgsql.Internal.NpgsqlConnector.ReadMessageLong(Boolean async, DataRowLoadingMode dataRowLoadingMode, Boolean readingNotifications, Boolean isReadingPrependedMessage)
+   at System.Runtime.CompilerServices.PoolingAsyncValueTaskMethodBuilder`1.StateMachineBox`1.System.Threading.Tasks.Sources.IValueTaskSource<TResult>.GetResult(Int16 token)
+   at Npgsql.NpgsqlDataReader.NextResult(Boolean async, Boolean isConsuming, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlDataReader.NextResult(Boolean async, Boolean isConsuming, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(Boolean async, CommandBehavior behavior, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(Boolean async, CommandBehavior behavior, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteDbDataReaderAsync(CommandBehavior behavior, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Npgsql.EntityFrameworkCore.PostgreSQL.Storage.Internal.NpgsqlExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+   at Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions.ToListAsync[TSource](IQueryable`1 source, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions.ToListAsync[TSource](IQueryable`1 source, CancellationToken cancellationToken)
+   at TrainersController.Get() in /Users/tybyboiciuc/Desktop/gymFit_FullStack/GymFit_BE/Controllers/TrainersController.cs:line 28
+  Exception data:
+    Severity: ERROR
+    SqlState: 42703
+    MessageText: column t.UserId1 does not exist
+    Hint: Perhaps you meant to reference the column "t.UserId".
+    Position: 62
+    File: parse_relation.c
+    Line: 3729
+    Routine: errorMissingColumn
+2025-06-13 10:28:02,485 [11] INFO  GymFit.BE.Controllers.UsersController - === POST REQUEST STARTED ===
+2025-06-13 10:28:02,485 [11] INFO  GymFit.BE.Controllers.UsersController - Creating user: 
+2025-06-13 10:28:02,542 [11] ERROR GymFit.BE.Controllers.UsersController - ❌ Email already exists: 
+2025-06-13 10:28:10,617 [11] INFO  GymFit.BE.Controllers.UsersController - Getting all users
+2025-06-13 10:29:43,772 [11] INFO  GymFit.BE.Controllers.UsersController - Getting all users
+2025-06-13 10:29:49,702 [12] INFO  TrainersController - Getting all trainers
+2025-06-13 10:29:49,810 [12] ERROR TrainersController - Error getting trainers
+Npgsql.PostgresException (0x80004005): 42703: column t.UserId1 does not exist
+
+POSITION: 62
+   at Npgsql.Internal.NpgsqlConnector.ReadMessageLong(Boolean async, DataRowLoadingMode dataRowLoadingMode, Boolean readingNotifications, Boolean isReadingPrependedMessage)
+   at System.Runtime.CompilerServices.PoolingAsyncValueTaskMethodBuilder`1.StateMachineBox`1.System.Threading.Tasks.Sources.IValueTaskSource<TResult>.GetResult(Int16 token)
+   at Npgsql.NpgsqlDataReader.NextResult(Boolean async, Boolean isConsuming, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlDataReader.NextResult(Boolean async, Boolean isConsuming, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(Boolean async, CommandBehavior behavior, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(Boolean async, CommandBehavior behavior, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteDbDataReaderAsync(CommandBehavior behavior, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Npgsql.EntityFrameworkCore.PostgreSQL.Storage.Internal.NpgsqlExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+   at Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions.ToListAsync[TSource](IQueryable`1 source, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions.ToListAsync[TSource](IQueryable`1 source, CancellationToken cancellationToken)
+   at TrainersController.Get() in /Users/tybyboiciuc/Desktop/gymFit_FullStack/GymFit_BE/Controllers/TrainersController.cs:line 28
+  Exception data:
+    Severity: ERROR
+    SqlState: 42703
+    MessageText: column t.UserId1 does not exist
+    Hint: Perhaps you meant to reference the column "t.UserId".
+    Position: 62
+    File: parse_relation.c
+    Line: 3729
+    Routine: errorMissingColumn
+2025-06-13 10:29:52,610 [12] INFO  TrainersController - Getting all trainers
+2025-06-13 10:29:52,665 [12] ERROR TrainersController - Error getting trainers
+Npgsql.PostgresException (0x80004005): 42703: column t.UserId1 does not exist
+
+POSITION: 62
+   at Npgsql.Internal.NpgsqlConnector.ReadMessageLong(Boolean async, DataRowLoadingMode dataRowLoadingMode, Boolean readingNotifications, Boolean isReadingPrependedMessage)
+   at System.Runtime.CompilerServices.PoolingAsyncValueTaskMethodBuilder`1.StateMachineBox`1.System.Threading.Tasks.Sources.IValueTaskSource<TResult>.GetResult(Int16 token)
+   at Npgsql.NpgsqlDataReader.NextResult(Boolean async, Boolean isConsuming, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlDataReader.NextResult(Boolean async, Boolean isConsuming, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(Boolean async, CommandBehavior behavior, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(Boolean async, CommandBehavior behavior, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteDbDataReaderAsync(CommandBehavior behavior, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Npgsql.EntityFrameworkCore.PostgreSQL.Storage.Internal.NpgsqlExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+   at Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions.ToListAsync[TSource](IQueryable`1 source, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions.ToListAsync[TSource](IQueryable`1 source, CancellationToken cancellationToken)
+   at TrainersController.Get() in /Users/tybyboiciuc/Desktop/gymFit_FullStack/GymFit_BE/Controllers/TrainersController.cs:line 28
+  Exception data:
+    Severity: ERROR
+    SqlState: 42703
+    MessageText: column t.UserId1 does not exist
+    Hint: Perhaps you meant to reference the column "t.UserId".
+    Position: 62
+    File: parse_relation.c
+    Line: 3729
+    Routine: errorMissingColumn
+2025-06-13 10:29:53,295 [12] INFO  TrainersController - Getting all trainers
+2025-06-13 10:29:53,334 [11] ERROR TrainersController - Error getting trainers
+Npgsql.PostgresException (0x80004005): 42703: column t.UserId1 does not exist
+
+POSITION: 62
+   at Npgsql.Internal.NpgsqlConnector.ReadMessageLong(Boolean async, DataRowLoadingMode dataRowLoadingMode, Boolean readingNotifications, Boolean isReadingPrependedMessage)
+   at System.Runtime.CompilerServices.PoolingAsyncValueTaskMethodBuilder`1.StateMachineBox`1.System.Threading.Tasks.Sources.IValueTaskSource<TResult>.GetResult(Int16 token)
+   at Npgsql.NpgsqlDataReader.NextResult(Boolean async, Boolean isConsuming, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlDataReader.NextResult(Boolean async, Boolean isConsuming, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(Boolean async, CommandBehavior behavior, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(Boolean async, CommandBehavior behavior, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteDbDataReaderAsync(CommandBehavior behavior, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Npgsql.EntityFrameworkCore.PostgreSQL.Storage.Internal.NpgsqlExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+   at Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions.ToListAsync[TSource](IQueryable`1 source, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions.ToListAsync[TSource](IQueryable`1 source, CancellationToken cancellationToken)
+   at TrainersController.Get() in /Users/tybyboiciuc/Desktop/gymFit_FullStack/GymFit_BE/Controllers/TrainersController.cs:line 28
+  Exception data:
+    Severity: ERROR
+    SqlState: 42703
+    MessageText: column t.UserId1 does not exist
+    Hint: Perhaps you meant to reference the column "t.UserId".
+    Position: 62
+    File: parse_relation.c
+    Line: 3729
+    Routine: errorMissingColumn
+2025-06-13 10:29:58,119 [12] INFO  TrainersController - Getting trainer with ID: 10
+2025-06-13 10:29:58,168 [12] ERROR TrainersController - Error getting trainer 10
+Npgsql.PostgresException (0x80004005): 42703: column t.UserId1 does not exist
+
+POSITION: 62
+   at Npgsql.Internal.NpgsqlConnector.ReadMessageLong(Boolean async, DataRowLoadingMode dataRowLoadingMode, Boolean readingNotifications, Boolean isReadingPrependedMessage)
+   at System.Runtime.CompilerServices.PoolingAsyncValueTaskMethodBuilder`1.StateMachineBox`1.System.Threading.Tasks.Sources.IValueTaskSource<TResult>.GetResult(Int16 token)
+   at Npgsql.NpgsqlDataReader.NextResult(Boolean async, Boolean isConsuming, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlDataReader.NextResult(Boolean async, Boolean isConsuming, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(Boolean async, CommandBehavior behavior, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(Boolean async, CommandBehavior behavior, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteDbDataReaderAsync(CommandBehavior behavior, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Npgsql.EntityFrameworkCore.PostgreSQL.Storage.Internal.NpgsqlExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+   at Microsoft.EntityFrameworkCore.Query.ShapedQueryCompilingExpressionVisitor.SingleOrDefaultAsync[TSource](IAsyncEnumerable`1 asyncEnumerable, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.ShapedQueryCompilingExpressionVisitor.SingleOrDefaultAsync[TSource](IAsyncEnumerable`1 asyncEnumerable, CancellationToken cancellationToken)
+   at TrainersController.Get(Int32 key) in /Users/tybyboiciuc/Desktop/gymFit_FullStack/GymFit_BE/Controllers/TrainersController.cs:line 63
+  Exception data:
+    Severity: ERROR
+    SqlState: 42703
+    MessageText: column t.UserId1 does not exist
+    Hint: Perhaps you meant to reference the column "t.UserId".
+    Position: 62
+    File: parse_relation.c
+    Line: 3729
+    Routine: errorMissingColumn
+2025-06-13 10:30:03,725 [11] INFO  TrainersController - 🏋️ POST trainer for user 10
+2025-06-13 10:30:03,798 [11] ERROR TrainersController - ❌ Error creating trainer: 42703: column t.UserId1 does not exist
+
+POSITION: 62
+2025-06-13 10:30:17,021 [11] INFO  TrainersController - Getting all trainers
+2025-06-13 10:30:17,812 [11] ERROR TrainersController - Error getting trainers
+Npgsql.PostgresException (0x80004005): 42703: column t.UserId1 does not exist
+
+POSITION: 62
+   at Npgsql.Internal.NpgsqlConnector.ReadMessageLong(Boolean async, DataRowLoadingMode dataRowLoadingMode, Boolean readingNotifications, Boolean isReadingPrependedMessage)
+   at System.Runtime.CompilerServices.PoolingAsyncValueTaskMethodBuilder`1.StateMachineBox`1.System.Threading.Tasks.Sources.IValueTaskSource<TResult>.GetResult(Int16 token)
+   at Npgsql.NpgsqlDataReader.NextResult(Boolean async, Boolean isConsuming, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlDataReader.NextResult(Boolean async, Boolean isConsuming, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(Boolean async, CommandBehavior behavior, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(Boolean async, CommandBehavior behavior, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteDbDataReaderAsync(CommandBehavior behavior, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Npgsql.EntityFrameworkCore.PostgreSQL.Storage.Internal.NpgsqlExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+   at Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions.ToListAsync[TSource](IQueryable`1 source, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions.ToListAsync[TSource](IQueryable`1 source, CancellationToken cancellationToken)
+   at TrainersController.Get() in /Users/tybyboiciuc/Desktop/gymFit_FullStack/GymFit_BE/Controllers/TrainersController.cs:line 28
+  Exception data:
+    Severity: ERROR
+    SqlState: 42703
+    MessageText: column t.UserId1 does not exist
+    Hint: Perhaps you meant to reference the column "t.UserId".
+    Position: 62
+    File: parse_relation.c
+    Line: 3729
+    Routine: errorMissingColumn
+2025-06-13 10:30:27,906 [7] INFO  GymFit.BE.Controllers.UsersController - Getting all users
+2025-06-13 10:30:31,734 [7] INFO  TrainersController - Getting all trainers
+2025-06-13 10:30:31,793 [7] ERROR TrainersController - Error getting trainers
+Npgsql.PostgresException (0x80004005): 42703: column t.UserId1 does not exist
+
+POSITION: 62
+   at Npgsql.Internal.NpgsqlConnector.ReadMessageLong(Boolean async, DataRowLoadingMode dataRowLoadingMode, Boolean readingNotifications, Boolean isReadingPrependedMessage)
+   at System.Runtime.CompilerServices.PoolingAsyncValueTaskMethodBuilder`1.StateMachineBox`1.System.Threading.Tasks.Sources.IValueTaskSource<TResult>.GetResult(Int16 token)
+   at Npgsql.NpgsqlDataReader.NextResult(Boolean async, Boolean isConsuming, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlDataReader.NextResult(Boolean async, Boolean isConsuming, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(Boolean async, CommandBehavior behavior, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(Boolean async, CommandBehavior behavior, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteDbDataReaderAsync(CommandBehavior behavior, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Npgsql.EntityFrameworkCore.PostgreSQL.Storage.Internal.NpgsqlExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+   at Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions.ToListAsync[TSource](IQueryable`1 source, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions.ToListAsync[TSource](IQueryable`1 source, CancellationToken cancellationToken)
+   at TrainersController.Get() in /Users/tybyboiciuc/Desktop/gymFit_FullStack/GymFit_BE/Controllers/TrainersController.cs:line 28
+  Exception data:
+    Severity: ERROR
+    SqlState: 42703
+    MessageText: column t.UserId1 does not exist
+    Hint: Perhaps you meant to reference the column "t.UserId".
+    Position: 62
+    File: parse_relation.c
+    Line: 3729
+    Routine: errorMissingColumn
+2025-06-13 10:36:53,264 [15] INFO  TrainersController - Getting all trainers
+2025-06-13 10:36:53,516 [15] ERROR TrainersController - Error getting trainers
+Npgsql.PostgresException (0x80004005): 42703: column t.UserId1 does not exist
+
+POSITION: 62
+   at Npgsql.Internal.NpgsqlConnector.ReadMessageLong(Boolean async, DataRowLoadingMode dataRowLoadingMode, Boolean readingNotifications, Boolean isReadingPrependedMessage)
+   at System.Runtime.CompilerServices.PoolingAsyncValueTaskMethodBuilder`1.StateMachineBox`1.System.Threading.Tasks.Sources.IValueTaskSource<TResult>.GetResult(Int16 token)
+   at Npgsql.NpgsqlDataReader.NextResult(Boolean async, Boolean isConsuming, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlDataReader.NextResult(Boolean async, Boolean isConsuming, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(Boolean async, CommandBehavior behavior, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(Boolean async, CommandBehavior behavior, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteDbDataReaderAsync(CommandBehavior behavior, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Npgsql.EntityFrameworkCore.PostgreSQL.Storage.Internal.NpgsqlExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+   at Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions.ToListAsync[TSource](IQueryable`1 source, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions.ToListAsync[TSource](IQueryable`1 source, CancellationToken cancellationToken)
+   at TrainersController.Get() in /Users/tybyboiciuc/Desktop/gymFit_FullStack/GymFit_BE/Controllers/TrainersController.cs:line 28
+  Exception data:
+    Severity: ERROR
+    SqlState: 42703
+    MessageText: column t.UserId1 does not exist
+    Hint: Perhaps you meant to reference the column "t.UserId".
+    Position: 62
+    File: parse_relation.c
+    Line: 3729
+    Routine: errorMissingColumn
+2025-06-13 10:37:08,706 [22] INFO  GymFit.BE.Controllers.UsersController - Getting all users
+2025-06-13 10:51:12,233 [11] INFO  TrainersController - Getting all trainers
+2025-06-13 10:51:13,189 [11] INFO  TrainersController - Getting all trainers
+2025-06-13 10:51:20,156 [11] INFO  TrainersController - 🏋️ POST trainer for user 10
+2025-06-13 10:51:20,423 [11] INFO  TrainersController - ✅ Trainer created successfully: ID 1 for user 10
+2025-06-13 10:51:28,703 [12] INFO  TrainersController - Getting all trainers
+2025-06-13 10:51:36,217 [11] INFO  TrainersController - Getting trainer with ID: 1
+2025-06-13 10:51:40,880 [12] INFO  TrainersController - Getting all trainers
+2025-06-13 11:31:48,345 [11] INFO  TrainersController - Getting all trainers
+2025-06-13 11:31:57,402 [7] INFO  TrainersController - 🏋️ POST trainer for user 10
+2025-06-13 11:32:06,377 [10] INFO  TrainersController - 🏋️ POST trainer for user 9
+2025-06-13 11:32:06,550 [10] INFO  TrainersController - ✅ Trainer created successfully: ID 2 for user 9
+2025-06-13 11:32:12,466 [10] INFO  TrainersController - 🏋️ POST trainer for user 11
+2025-06-13 11:32:16,991 [7] INFO  TrainersController - Getting all trainers
+2025-06-13 11:32:55,687 [7] INFO  TrainersController - 🔄 PATCH trainer 11
+2025-06-13 11:33:06,465 [7] INFO  TrainersController - Getting all trainers
+2025-06-13 11:33:19,386 [7] INFO  TrainersController - 🔄 PATCH trainer 2
+2025-06-13 11:33:19,423 [7] INFO  TrainersController - Updated experience for trainer 2
+2025-06-13 11:33:19,423 [7] INFO  TrainersController - Updated introduction for trainer 2
+2025-06-13 11:33:19,469 [7] INFO  TrainersController - ✅ Trainer 2 updated successfully
+2025-06-13 11:33:57,474 [14] INFO  TrainersController - Getting all trainers
+2025-06-13 11:48:09,926 [11] INFO  TrainersController - Getting all trainers
+2025-06-13 11:49:51,788 [14] INFO  TrainersController - 🗑️ DELETE trainer 2
+2025-06-13 11:49:51,966 [14] INFO  TrainersController - ✅ Trainer 2 deleted successfully, user 9 role changed to Member
+2025-06-13 11:49:55,353 [15] INFO  TrainersController - Getting trainer with ID: 2
+2025-06-13 11:49:57,845 [15] INFO  TrainersController - Getting all trainers
+2025-06-13 11:50:09,715 [15] INFO  GymFit.BE.Controllers.UsersController - Getting all users
+2025-06-13 12:17:48,125 [17] INFO  GymFit.BE.Controllers.UsersController - === POST REQUEST STARTED ===
+2025-06-13 12:17:48,126 [17] INFO  GymFit.BE.Controllers.UsersController - Creating user: tyby.boiciuc03@e-uvt.ro
+2025-06-13 12:17:48,390 [17] ERROR GymFit.BE.Controllers.UsersController - ❌ Email already exists: tyby.boiciuc03@e-uvt.ro
+2025-06-13 12:17:52,594 [22] INFO  GymFit.BE.Controllers.UsersController - === POST REQUEST STARTED ===
+2025-06-13 12:17:52,594 [22] INFO  GymFit.BE.Controllers.UsersController - Creating user: tyby.boiciuc04@e-uvt.ro
+2025-06-13 12:17:52,624 [17] INFO  GymFit.BE.Controllers.UsersController - ✅ Validation passed - Creating user: tyby.boiciuc04@e-uvt.ro
+2025-06-13 12:17:52,671 [17] INFO  GymFit.BE.Controllers.UsersController - ✅ User created successfully with ID: 11
+2025-06-13 12:17:55,305 [22] INFO  GymFit.BE.Controllers.UsersController - Getting all users
+2025-06-13 12:18:08,251 [17] INFO  GymFit.BE.Controllers.UsersController - Getting user with ID: 11
+2025-06-13 12:19:36,557 [22] INFO  TrainersController - 🏋️ POST trainer for user 11
+2025-06-13 12:19:36,678 [22] INFO  TrainersController - ✅ Trainer created successfully: ID 3 for user 11
+2025-06-13 12:19:40,848 [24] INFO  TrainersController - Getting all trainers
+2025-06-13 12:20:16,677 [24] INFO  TrainersController - 🔄 PATCH trainer 2
+2025-06-13 12:20:22,821 [24] INFO  TrainersController - 🔄 PATCH trainer 3
+2025-06-13 12:20:22,853 [25] INFO  TrainersController - Updated experience for trainer 3
+2025-06-13 12:20:22,880 [25] INFO  TrainersController - ✅ Trainer 3 updated successfully
+2025-06-13 12:20:34,589 [24] INFO  TrainersController - Getting trainer with ID: 2
+2025-06-13 12:20:37,764 [25] INFO  TrainersController - Getting all trainers
+2025-06-13 12:38:12,982 [11] INFO  MembersController - Getting all members
+2025-06-13 12:38:23,218 [11] INFO  MembersController - Getting all members
+2025-06-13 12:38:36,120 [7] INFO  TrainersController - Getting all trainers
+2025-06-13 12:38:40,125 [7] INFO  GymFit.BE.Controllers.UsersController - Getting all users
+2025-06-13 12:39:42,099 [11] INFO  GymFit.BE.Controllers.UsersController - Getting all users
+2025-06-13 12:39:45,942 [3] INFO  GymFit.BE.Controllers.UsersController - === POST REQUEST STARTED ===
+2025-06-13 12:39:45,943 [3] ERROR GymFit.BE.Controllers.UsersController - ❌ EXCEPTION in POST: Object reference not set to an instance of an object.
+2025-06-13 12:39:45,947 [3] ERROR GymFit.BE.Controllers.UsersController - Stack trace:    at GymFit.BE.Controllers.UsersController.Post(CreateUserDTO createUserDTO) in /Users/tybyboiciuc/Desktop/gymFit_FullStack/GymFit_BE/Controllers/UsersController.cs:line 89
+2025-06-13 12:40:02,206 [14] INFO  GymFit.BE.Controllers.UsersController - === POST REQUEST STARTED ===
+2025-06-13 12:40:02,206 [14] ERROR GymFit.BE.Controllers.UsersController - ❌ EXCEPTION in POST: Object reference not set to an instance of an object.
+2025-06-13 12:40:02,207 [14] ERROR GymFit.BE.Controllers.UsersController - Stack trace:    at GymFit.BE.Controllers.UsersController.Post(CreateUserDTO createUserDTO) in /Users/tybyboiciuc/Desktop/gymFit_FullStack/GymFit_BE/Controllers/UsersController.cs:line 89
+2025-06-13 12:40:22,480 [14] INFO  GymFit.BE.Controllers.UsersController - Getting all users
+2025-06-13 12:42:37,736 [11] INFO  GymFit.BE.Controllers.UsersController - === POST REQUEST STARTED ===
+2025-06-13 12:42:37,738 [11] INFO  GymFit.BE.Controllers.UsersController - Creating user: NULL DTO
+2025-06-13 12:42:37,738 [11] ERROR GymFit.BE.Controllers.UsersController - ❌ CreateUserDTO is null
+2025-06-13 12:42:41,775 [7] INFO  GymFit.BE.Controllers.UsersController - Getting all users
+2025-06-13 12:42:46,808 [7] INFO  GymFit.BE.Controllers.UsersController - === POST REQUEST STARTED ===
+2025-06-13 12:42:46,808 [7] INFO  GymFit.BE.Controllers.UsersController - Creating user: NULL DTO
+2025-06-13 12:42:46,808 [7] ERROR GymFit.BE.Controllers.UsersController - ❌ CreateUserDTO is null
+2025-06-13 12:42:54,769 [10] INFO  GymFit.BE.Controllers.UsersController - === POST REQUEST STARTED ===
+2025-06-13 12:42:54,769 [10] INFO  GymFit.BE.Controllers.UsersController - Creating user: seby.boiciuc04@e-uvt.ro
+2025-06-13 12:42:54,857 [10] INFO  GymFit.BE.Controllers.UsersController - ✅ Validation passed - Creating user: seby.boiciuc04@e-uvt.ro
+2025-06-13 12:42:54,947 [10] INFO  GymFit.BE.Controllers.UsersController - ✅ User created successfully with ID: 12
+2025-06-13 12:43:56,680 [11] INFO  GymFit.BE.Controllers.UsersController - === POST REQUEST STARTED ===
+2025-06-13 12:43:56,683 [11] INFO  GymFit.BE.Controllers.UsersController - Creating user: seby.boiciuc04@e-uvt.ro
+2025-06-13 12:43:57,569 [11] ERROR GymFit.BE.Controllers.UsersController - ❌ Email already exists: seby.boiciuc04@e-uvt.ro
+2025-06-13 12:44:00,416 [11] INFO  GymFit.BE.Controllers.UsersController - === POST REQUEST STARTED ===
+2025-06-13 12:44:00,417 [11] INFO  GymFit.BE.Controllers.UsersController - Creating user: seby.boiciuc05@e-uvt.ro
+2025-06-13 12:44:00,475 [11] INFO  GymFit.BE.Controllers.UsersController - ✅ Validation passed - Creating user: seby.boiciuc05@e-uvt.ro
+2025-06-13 12:44:00,569 [11] INFO  GymFit.BE.Controllers.UsersController - ✅ User created successfully with ID: 13
+2025-06-13 12:44:03,759 [11] INFO  GymFit.BE.Controllers.UsersController - Getting all users
+2025-06-13 12:45:02,390 [11] INFO  MembersController - Getting all members
+2025-06-13 12:45:12,784 [11] INFO  TrainersController - Getting all trainers
+2025-06-13 12:46:30,544 [14] ERROR MembersController - ❌ Error creating member: Object reference not set to an instance of an object.
+2025-06-13 12:47:07,377 [14] ERROR MembersController - ❌ Error creating member: Object reference not set to an instance of an object.
+2025-06-13 13:14:20,265 [11] INFO  MembersController - 🏃 POST member request started
+2025-06-13 13:14:20,268 [11] ERROR MembersController - ❌ CreateMemberDTO is null
+2025-06-13 13:15:20,649 [14] INFO  MembersController - 🏃 POST member request started
+2025-06-13 13:15:20,650 [14] ERROR MembersController - ❌ CreateMemberDTO is null
+2025-06-13 13:15:37,285 [14] INFO  MembersController - 🏃 POST member request started
+2025-06-13 13:15:37,285 [14] ERROR MembersController - ❌ CreateMemberDTO is null
+2025-06-13 13:15:47,092 [15] INFO  TrainersController - Getting all trainers
+2025-06-13 13:15:52,618 [15] INFO  GymFit.BE.Controllers.UsersController - Getting all users
+2025-06-13 13:16:00,446 [17] INFO  MembersController - 🏃 POST member request started
+2025-06-13 13:16:00,447 [17] ERROR MembersController - ❌ CreateMemberDTO is null
+2025-06-13 13:16:40,773 [15] INFO  MembersController - 🏃 POST member request started
+2025-06-13 13:16:40,773 [15] INFO  MembersController - 🏃 POST member for user 13
+2025-06-13 13:16:40,955 [15] ERROR MembersController - ❌ Error creating member: An error occurred while saving the entity changes. See the inner exception for details.
+2025-06-13 13:16:52,355 [15] INFO  MembersController - 🏃 POST member request started
+2025-06-13 13:16:52,355 [15] INFO  MembersController - 🏃 POST member for user 13
+2025-06-13 13:16:52,428 [15] ERROR MembersController - ❌ Error creating member: An error occurred while saving the entity changes. See the inner exception for details.
+2025-06-13 13:17:32,599 [20] INFO  GymFit.BE.Controllers.UsersController - Getting user with ID: 13
+2025-06-13 13:18:12,065 [11] INFO  MembersController - 🏃 POST member request started
+2025-06-13 13:18:12,067 [11] INFO  MembersController - 🏃 POST member for user 13
+2025-06-13 13:18:12,943 [11] ERROR MembersController - ❌ Error creating member: An error occurred while saving the entity changes. See the inner exception for details.
+2025-06-13 13:18:18,090 [12] INFO  MembersController - 🏃 POST member request started
+2025-06-13 13:18:18,090 [12] INFO  MembersController - 🏃 POST member for user 13
+2025-06-13 13:18:18,153 [12] ERROR MembersController - ❌ Error creating member: An error occurred while saving the entity changes. See the inner exception for details.
+2025-06-13 13:18:22,682 [12] INFO  GymFit.BE.Controllers.UsersController - Getting user with ID: 13
+2025-06-13 13:18:24,523 [12] INFO  MembersController - 🏃 POST member request started
+2025-06-13 13:18:24,523 [12] INFO  MembersController - 🏃 POST member for user 13
+2025-06-13 13:18:24,574 [7] ERROR MembersController - ❌ Error creating member: An error occurred while saving the entity changes. See the inner exception for details.
+2025-06-13 13:18:26,470 [7] INFO  MembersController - Getting all members
+2025-06-13 13:18:31,843 [7] INFO  MembersController - 🏃 POST member request started
+2025-06-13 13:18:31,843 [7] INFO  MembersController - 🏃 POST member for user 13
+2025-06-13 13:18:31,903 [12] ERROR MembersController - ❌ Error creating member: An error occurred while saving the entity changes. See the inner exception for details.
+2025-06-13 13:27:19,521 [19] INFO  MembersController - 🏃 POST member request started
+2025-06-13 13:27:19,521 [19] INFO  MembersController - 🏃 POST member for user 13
+2025-06-13 13:27:19,839 [21] ERROR MembersController - ❌ Error creating member: An error occurred while saving the entity changes. See the inner exception for details.
+2025-06-13 13:29:29,512 [11] INFO  MembersController - Getting all members
+2025-06-13 13:29:32,807 [11] INFO  MembersController - 🏃 POST member request started
+2025-06-13 13:29:32,808 [11] INFO  MembersController - 🏃 POST member for user 13
+2025-06-13 13:29:33,025 [11] ERROR MembersController - ❌ Error creating member: An error occurred while saving the entity changes. See the inner exception for details.
+2025-06-13 13:29:44,915 [11] INFO  MembersController - 🏃 POST member request started
+2025-06-13 13:29:44,915 [11] INFO  MembersController - 🏃 POST member for user 13
+2025-06-13 13:29:45,017 [11] ERROR MembersController - ❌ Error creating member: An error occurred while saving the entity changes. See the inner exception for details.
+2025-06-13 13:30:11,591 [11] INFO  MembersController - Getting all members
+2025-06-13 13:30:45,525 [11] INFO  MembersController - Getting member with ID: 13
+2025-06-13 13:30:48,981 [11] INFO  MembersController - Getting member with ID: 1
+2025-06-13 13:30:52,624 [15] INFO  MembersController - Getting all members
+2025-06-13 13:31:28,506 [15] INFO  MembersController - Getting all members
+2025-06-13 13:31:57,552 [15] INFO  MembersController - 🏃 POST member request started
+2025-06-13 13:31:57,553 [15] INFO  MembersController - 🏃 POST member for user 13
+2025-06-13 13:31:57,618 [15] ERROR MembersController - ❌ Error creating member: An error occurred while saving the entity changes. See the inner exception for details.
+2025-06-13 13:34:31,352 [11] INFO  MembersController - 🏃 POST member request started
+2025-06-13 13:34:31,355 [11] INFO  MembersController - 🏃 POST member for user 13
+2025-06-13 13:34:32,263 [11] ERROR MembersController - ❌ Error creating member: An error occurred while saving the entity changes. See the inner exception for details. | Inner: Cannot write DateTime with Kind=Local to PostgreSQL type 'timestamp with time zone', only UTC is supported. Note that it's not possible to mix DateTimes with different Kinds in an array, range, or multirange. (Parameter 'value')
+2025-06-13 13:34:34,875 [7] INFO  MembersController - Getting all members
+2025-06-13 13:34:37,291 [7] INFO  MembersController - 🏃 POST member request started
+2025-06-13 13:34:37,291 [7] INFO  MembersController - 🏃 POST member for user 13
+2025-06-13 13:34:37,371 [7] ERROR MembersController - ❌ Error creating member: An error occurred while saving the entity changes. See the inner exception for details. | Inner: Cannot write DateTime with Kind=Local to PostgreSQL type 'timestamp with time zone', only UTC is supported. Note that it's not possible to mix DateTimes with different Kinds in an array, range, or multirange. (Parameter 'value')
+2025-06-13 13:38:11,770 [11] INFO  MembersController - Getting all members
+2025-06-13 13:38:15,141 [11] INFO  MembersController - 🏃 POST member request started
+2025-06-13 13:38:15,141 [11] INFO  MembersController - 🏃 POST member for user 13
+2025-06-13 13:38:15,377 [11] ERROR MembersController - ❌ Error creating member: An error occurred while saving the entity changes. See the inner exception for details. | Inner: 23502: null value in column "JoinedAt" of relation "Members" violates not-null constraint
+
+DETAIL: Detail redacted as it may contain sensitive data. Specify 'Include Error Detail' in the connection string to include this information.
+2025-06-13 13:38:23,715 [11] INFO  TrainersController - Getting all trainers
+2025-06-13 13:38:26,608 [11] INFO  GymFit.BE.Controllers.UsersController - Getting user with ID: 13
+2025-06-13 13:38:30,109 [11] INFO  MembersController - 🏃 POST member request started
+2025-06-13 13:38:30,109 [11] INFO  MembersController - 🏃 POST member for user 13
+2025-06-13 13:38:30,206 [10] ERROR MembersController - ❌ Error creating member: An error occurred while saving the entity changes. See the inner exception for details. | Inner: 23502: null value in column "JoinedAt" of relation "Members" violates not-null constraint
+
+DETAIL: Detail redacted as it may contain sensitive data. Specify 'Include Error Detail' in the connection string to include this information.
+2025-06-13 13:38:34,005 [11] INFO  MembersController - 🏃 POST member request started
+2025-06-13 13:38:34,005 [11] INFO  MembersController - 🏃 POST member for user 13
+2025-06-13 13:38:34,094 [11] ERROR MembersController - ❌ Error creating member: An error occurred while saving the entity changes. See the inner exception for details. | Inner: 23502: null value in column "JoinedAt" of relation "Members" violates not-null constraint
+
+DETAIL: Detail redacted as it may contain sensitive data. Specify 'Include Error Detail' in the connection string to include this information.
+2025-06-13 13:40:19,366 [14] INFO  MembersController - 🏃 POST member request started
+2025-06-13 13:40:19,366 [14] INFO  MembersController - 🏃 POST member for user 13
+2025-06-13 13:40:19,485 [15] ERROR MembersController - ❌ Error creating member: An error occurred while saving the entity changes. See the inner exception for details. | Inner: 23502: null value in column "JoinedAt" of relation "Members" violates not-null constraint
+
+DETAIL: Detail redacted as it may contain sensitive data. Specify 'Include Error Detail' in the connection string to include this information.
+2025-06-13 13:41:49,880 [11] INFO  MembersController - 🏃 POST member request started
+2025-06-13 13:41:49,882 [11] INFO  MembersController - 🏃 POST member for user 13
+2025-06-13 13:41:51,008 [12] ERROR MembersController - ❌ Error creating member: An error occurred while saving the entity changes. See the inner exception for details. | Inner: 23502: null value in column "JoinedAt" of relation "Members" violates not-null constraint
+
+DETAIL: Detail redacted as it may contain sensitive data. Specify 'Include Error Detail' in the connection string to include this information.
+2025-06-13 13:45:14,176 [11] INFO  MembersController - Getting all members
+2025-06-13 13:45:17,416 [7] INFO  MembersController - 🏃 POST member request started
+2025-06-13 13:45:17,416 [7] INFO  MembersController - 🏃 POST member for user 13
+2025-06-13 13:45:17,644 [7] ERROR MembersController - ❌ Error creating member: An error occurred while saving the entity changes. See the inner exception for details. | Inner: 23502: null value in column "JoinedAt" of relation "Members" violates not-null constraint
+
+DETAIL: Detail redacted as it may contain sensitive data. Specify 'Include Error Detail' in the connection string to include this information.
+2025-06-13 13:49:26,594 [11] INFO  MembersController - Getting all members
+2025-06-13 13:49:29,630 [11] INFO  MembersController - 🏃 POST member request started
+2025-06-13 13:49:29,630 [11] INFO  MembersController - 🏃 POST member for user 13
+2025-06-13 13:49:29,874 [11] ERROR MembersController - ❌ Error creating member: An error occurred while saving the entity changes. See the inner exception for details. | Inner: 23502: null value in column "JoinedAt" of relation "Members" violates not-null constraint
+
+DETAIL: Detail redacted as it may contain sensitive data. Specify 'Include Error Detail' in the connection string to include this information.
+2025-06-13 13:50:28,129 [11] INFO  MembersController - Getting all members
+2025-06-13 13:50:30,890 [11] INFO  MembersController - 🏃 POST member request started
+2025-06-13 13:50:30,891 [11] INFO  MembersController - 🏃 POST member for user 13
+2025-06-13 13:50:31,048 [13] INFO  MembersController - ✅ Member created successfully: ID 8 for user 13
+2025-06-13 13:51:04,897 [3] INFO  TrainersController - Getting all trainers
+2025-06-13 13:51:10,029 [13] INFO  GymFit.BE.Controllers.UsersController - Getting user with ID: 13
+2025-06-13 13:51:14,797 [13] INFO  MembersController - 🏃 POST member request started
+2025-06-13 13:51:14,797 [13] INFO  MembersController - 🏃 POST member for user 13
+2025-06-13 13:51:18,817 [3] INFO  MembersController - Getting all members
+2025-06-13 13:53:45,114 [16] INFO  MembersController - 🔄 PATCH member 1
+2025-06-13 13:53:50,329 [16] INFO  MembersController - 🔄 PATCH member 8
+2025-06-13 13:53:50,361 [17] INFO  MembersController - Updated IsActive to False for member 8
+2025-06-13 13:53:50,391 [17] INFO  MembersController - ✅ Member 8 updated successfully
+2025-06-13 13:53:56,948 [20] INFO  MembersController - Getting all members
+2025-06-13 13:55:53,874 [23] INFO  GymFit.BE.Controllers.UsersController - Getting all users
+2025-06-13 13:56:18,639 [23] INFO  GymFit.BE.Controllers.UsersController - PATCH request for user 13
+2025-06-13 13:56:18,674 [23] INFO  GymFit.BE.Controllers.UsersController - Updated name to: samy Boiciuc
+2025-06-13 13:56:18,705 [23] INFO  GymFit.BE.Controllers.UsersController -  User 13 updated successfully
+2025-06-13 13:56:23,449 [23] INFO  GymFit.BE.Controllers.UsersController - Getting all users
+2025-06-13 13:56:39,385 [26] INFO  MembersController - Getting all members
+2025-06-13 13:57:13,819 [23] INFO  MembersController - 🏃 POST member request started
+2025-06-13 13:57:13,819 [23] INFO  MembersController - 🏃 POST member for user 0
+2025-06-13 13:57:40,596 [23] INFO  MembersController - 🏃 POST member request started
+2025-06-13 13:57:40,597 [23] INFO  MembersController - 🏃 POST member for user 12
+2025-06-13 13:57:40,696 [27] INFO  MembersController - ✅ Member created successfully: ID 9 for user 12
+2025-06-13 13:57:43,648 [27] INFO  MembersController - Getting all members
+2025-06-13 13:58:07,009 [23] INFO  MembersController - 🗑️ DELETE member 8
+2025-06-13 13:58:07,134 [23] INFO  MembersController - ✅ Member 8 deleted successfully, user 13 role changed to Admin
+2025-06-13 13:58:10,632 [28] INFO  MembersController - Getting member with ID: 8
+2025-06-13 13:58:13,468 [28] INFO  MembersController - Getting all members

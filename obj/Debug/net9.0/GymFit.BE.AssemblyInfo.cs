@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("GymFit.BE")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+b1e798bdfe57aee7dc475b8d905493f40ec6d894")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+039e7a218cac7aa1791cb51e836ee21c441b49c8")]
 [assembly: System.Reflection.AssemblyProductAttribute("GymFit.BE")]
 [assembly: System.Reflection.AssemblyTitleAttribute("GymFit.BE")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

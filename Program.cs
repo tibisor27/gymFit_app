@@ -70,8 +70,8 @@ static IEdmModel GetEdmModel()
     
     // Înregistrează DOAR modelele esențiale pentru OData - SIMPLU!
     builder.EntitySet<User>("Users");
-    builder.EntitySet<Members>("Members");
-    builder.EntitySet<Trainers>("Trainers");
+    builder.EntitySet<Member>("Members");
+    builder.EntitySet<Trainer>("Trainers");
     
     // DTOs pentru OData
     builder.EntitySet<UserDTO>("UserDTOs");
