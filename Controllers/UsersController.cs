@@ -8,6 +8,7 @@ using GymFit.BE.DTOs;
 using log4net;
 using System.Security.Cryptography;
 using System.Text;
+using Microsoft.AspNetCore.Authorization;
 
 namespace GymFit.BE.Controllers
 {
@@ -23,6 +24,7 @@ namespace GymFit.BE.Controllers
         }
 
         [EnableQuery]
+        [Authorize]
         public async Task<IActionResult> Get()
         {
             try

@@ -700,3 +700,37 @@ DETAIL: Detail redacted as it may contain sensitive data. Specify 'Include Error
 2025-06-13 13:58:07,134 [23] INFO  MembersController - ✅ Member 8 deleted successfully, user 13 role changed to Admin
 2025-06-13 13:58:10,632 [28] INFO  MembersController - Getting member with ID: 8
 2025-06-13 13:58:13,468 [28] INFO  MembersController - Getting all members
+2025-06-13 18:40:49,268 [7] INFO  TrainersController - Getting all trainers
+2025-06-13 18:41:45,818 [15] INFO  MembersController - Getting all members
+2025-06-13 18:43:08,632 [18] INFO  GymFit.BE.Controllers.UsersController - Getting all users
+2025-06-13 18:46:06,967 [26] INFO  AuthController - Login attempt for email: seby.boiciuc05@e-uvt.ro
+2025-06-13 18:46:07,258 [26] INFO  GymFit.BE.Services.JwtService - Generated JWT token for user seby.boiciuc05@e-uvt.ro (id: 13)
+2025-06-13 18:47:15,313 [11] INFO  AuthController - Login attempt for email: seby.boiciuc05@e-uvt.ro
+2025-06-13 18:47:16,133 [11] INFO  GymFit.BE.Services.JwtService - Generated JWT token for user seby.boiciuc05@e-uvt.ro (id: 13)
+2025-06-13 18:47:16,139 [11] INFO  AuthController - Login successful for user seby.boiciuc05@e-uvt.ro
+2025-06-13 18:48:27,575 [3] INFO  GymFit.BE.Controllers.UsersController - Getting all users
+2025-06-13 18:48:30,292 [15] INFO  GymFit.BE.Controllers.UsersController - Getting all users
+2025-06-13 18:48:31,147 [15] INFO  GymFit.BE.Controllers.UsersController - Getting all users
+2025-06-13 18:49:02,544 [3] INFO  GymFit.BE.Controllers.UsersController - Getting all users
+2025-06-13 18:49:15,110 [3] INFO  GymFit.BE.Controllers.UsersController - Getting all users
+2025-06-13 18:49:55,827 [17] INFO  GymFit.BE.Controllers.UsersController - Getting all users
+2025-06-13 18:50:24,424 [7] INFO  GymFit.BE.Controllers.UsersController - Getting all users
+2025-06-13 18:51:46,353 [15] INFO  GymFit.BE.Controllers.UsersController - Getting all users
+2025-06-13 18:51:47,088 [15] INFO  GymFit.BE.Controllers.UsersController - Getting all users
+2025-06-13 18:51:47,499 [16] INFO  GymFit.BE.Controllers.UsersController - Getting all users
+2025-06-13 18:54:23,272 [3] INFO  AuthController - Login attempt for email: seby.boiciuc05@e-uvt.ro
+2025-06-13 18:54:24,183 [3] INFO  GymFit.BE.Services.JwtService - Generated JWT token for user seby.boiciuc05@e-uvt.ro (id: 13)
+2025-06-13 18:54:24,190 [3] INFO  AuthController - Login successful for user seby.boiciuc05@e-uvt.ro
+2025-06-13 18:55:32,746 [16] INFO  AuthController - Login attempt for email: seby.boiciuc05@e-uvt.ro
+2025-06-13 18:55:32,789 [16] INFO  GymFit.BE.Services.JwtService - Generated JWT token for user seby.boiciuc05@e-uvt.ro (id: 13)
+2025-06-13 18:55:32,789 [16] INFO  AuthController - Login successful for user seby.boiciuc05@e-uvt.ro
+2025-06-13 18:56:04,218 [20] INFO  AuthController - Login attempt for email: seby.boiciuc05@e-uvt.ro
+2025-06-13 18:56:04,282 [20] INFO  GymFit.BE.Services.JwtService - Generated JWT token for user seby.boiciuc05@e-uvt.ro (id: 13)
+2025-06-13 18:56:04,282 [20] INFO  AuthController - Login successful for user seby.boiciuc05@e-uvt.ro
+2025-06-13 18:56:07,233 [16] INFO  AuthController - Login attempt for email: seby.boiciuc05@e-uvt.ro
+2025-06-13 18:56:07,291 [16] INFO  GymFit.BE.Services.JwtService - Generated JWT token for user seby.boiciuc05@e-uvt.ro (id: 13)
+2025-06-13 18:56:07,291 [16] INFO  AuthController - Login successful for user seby.boiciuc05@e-uvt.ro
+2025-06-13 18:56:26,423 [21] INFO  GymFit.BE.Controllers.UsersController - === POST REQUEST STARTED ===
+2025-06-13 18:56:26,423 [21] INFO  GymFit.BE.Controllers.UsersController - Creating user: seby.boiciuc05@e-uvt.ro
+2025-06-13 18:56:26,424 [21] ERROR GymFit.BE.Controllers.UsersController - ❌ Invalid model state for user creation
+2025-06-13 18:57:25,689 [16] INFO  GymFit.BE.Controllers.UsersController - Getting all users
