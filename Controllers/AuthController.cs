@@ -19,31 +19,66 @@ using Microsoft.EntityFrameworkCore;
         private readonly GymFitDbContext _context;
         private readonly ILog _logger;
         private readonly JwtService _jwtService;
+        private readonly IValidationService _validationService;
 
-        public AuthController(GymFitDbContext context, JwtService jwtService)
+        public AuthController(
+            GymFitDbContext context, 
+            JwtService jwtService,
+            IValidationService validationService)
         {
             _context = context;
             _jwtService = jwtService;
+            _validationService = validationService;
             _logger = LogManager.GetLogger(typeof(AuthController));
         }
 
         [HttpPost("login")]
-        public async Task<IActionResult> Login([FromBody] LoginDTO loginDto) //loginDto contine email si parola care vine de la frontend
-        {   //user va returna primul obiect (user) din baza de date care are emailul la fel cu cel din login
+        public async Task<IActionResult> Login([FromBody] LoginDTO loginDto)
+        {
+            if (!ModelState.IsValid)
+            {
+                var errors = ModelState
+                    .Where(x => x.Value != null && x.Value.Errors.Count > 0)
+                    .Select(x => new {
+                        Field = x.Key,
+                        Errors = x.Value!.Errors.Select(e => e.ErrorMessage).ToArray()
+                    });
+                _logger.Error($"Login failed: Invalid model state. Errors: {errors}");
+                return BadRequest(new { 
+                    message = "Invalid login data", 
+                    errors 
+                });
+            }
+
             _logger.Info($"Login attempt for email: {loginDto.Email}");
-            var user = await _context.Users.FirstOrDefaultAsync(u => u.Email == loginDto.Email); //verificam daca userul exista in baza de date
+            var user = await _context.Users.FirstOrDefaultAsync(u => u.Email == loginDto.Email);
             if (user == null)
             {
                 _logger.Error($"Login failed: user not found for email {loginDto.Email}");
-                return Unauthorized("Email sau parolă incorectă!");
+                return BadRequest(new { 
+                    message = "Invalid credentials",
+                    errors = new[] {
+                        new {
+                            Field = "Email",
+                            Errors = new[] { "Invalid email or password" }
+                        }
+                    }
+                });
             }
 
-            // Verifică parola (hash, etc)
             var hashedPassword = HashPassword(loginDto.Password);
             if (user.Password != hashedPassword)
             {
                 _logger.Error($"Login failed: wrong password for email {loginDto.Email}");
-                return Unauthorized("Email sau parolă incorectă!");
+                return BadRequest(new { 
+                    message = "Invalid credentials",
+                    errors = new[] {
+                        new {
+                            Field = "Password",
+                            Errors = new[] { "Invalid email or password" }
+                        }
+                    }
+                });
             }
 
             var token = _jwtService.GenerateToken(user);
@@ -54,25 +89,106 @@ using Microsoft.EntityFrameworkCore;
         [HttpPost("register")]
         public async Task<IActionResult> Register([FromBody] CreateUserDTO registerDto)
         {
+            if (!ModelState.IsValid)
+            {
+                var errors = ModelState
+                    .Where(x => x.Value != null && x.Value.Errors.Count > 0)
+                    .Select(x => new {
+                        Field = x.Key,
+                        Errors = x.Value!.Errors.Select(e => e.ErrorMessage).ToArray()
+                    });
+                _logger.Error($"Register failed: Invalid model state. Errors: {errors}");
+                return BadRequest(new { message = "Invalid data", errors });
+            }
+
+            // Validate email format
+            var (isEmailValid, emailErrors) = _validationService.ValidateEmail(registerDto.Email);
+            if (!isEmailValid)
+            {
+                return BadRequest(new { 
+                    message = "Validation failed", 
+                    errors = new[] { new { Field = "Email", Errors = emailErrors } } 
+                });
+            }
+
+            // Validate password strength
+            var (isPasswordValid, passwordErrors) = _validationService.ValidatePassword(registerDto.Password);
+            if (!isPasswordValid)
+            {
+                return BadRequest(new { 
+                    message = "Validation failed", 
+                    errors = new[] { new { Field = "Password", Errors = passwordErrors } } 
+                });
+            }
+
+            // Validate phone number
+            var (isPhoneValid, phoneErrors) = _validationService.ValidatePhoneNumber(registerDto.PhoneNumber);
+            if (!isPhoneValid)
+            {
+                return BadRequest(new { 
+                    message = "Validation failed", 
+                    errors = new[] { new { Field = "PhoneNumber", Errors = phoneErrors } } 
+                });
+            }
+
             _logger.Info($"Register attempt for email: {registerDto.Email}");
-            // 1. Verifică dacă emailul există deja
+
             var existingUser = await _context.Users.FirstOrDefaultAsync(u => u.Email == registerDto.Email);
             if (existingUser != null)
             {
                 _logger.Error($"Register failed: email already exists {registerDto.Email}");
-                return BadRequest("Email already exists!");
+                return BadRequest(new { 
+                    message = "Validation failed", 
+                    errors = new[] { 
+                        new { 
+                            Field = "Email", 
+                            Errors = new[] { "Email already exists!" } 
+                        } 
+                    } 
+                });
             }
 
-            // 2. Hash-uiește parola
+            // Validate age
+            var today = DateOnly.FromDateTime(DateTime.Today);
+            var age = today.Year - registerDto.DateOfBirth.Year;
+            if (registerDto.DateOfBirth > today.AddYears(-age)) age--;
+
+            if (age < 16)
+            {
+                _logger.Error($"Register failed: user too young ({age} years old)");
+                return BadRequest(new { 
+                    message = "Validation failed", 
+                    errors = new[] { 
+                        new { 
+                            Field = "DateOfBirth", 
+                            Errors = new[] { "User must be at least 16 years old" } 
+                        } 
+                    } 
+                });
+            }
+
+            if (age > 100)
+            {
+                _logger.Error($"Register failed: invalid age ({age} years old)");
+                return BadRequest(new { 
+                    message = "Validation failed", 
+                    errors = new[] { 
+                        new { 
+                            Field = "DateOfBirth", 
+                            Errors = new[] { "Invalid age" } 
+                        } 
+                    } 
+                });
+            }
+
             var hashedPassword = HashPassword(registerDto.Password);
 
-            // 3. Creează userul
             var user = new User
             {
                 Name = registerDto.Name,
                 Email = registerDto.Email,
                 Password = hashedPassword,
-                UserRole = registerDto.UserRole, // sau default: Role.Member
+                UserRole = Role.Member,
                 PhoneNumber = registerDto.PhoneNumber,
                 DateOfBirth = registerDto.DateOfBirth
             };

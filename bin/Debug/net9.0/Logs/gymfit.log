@@ -734,3 +734,66 @@ DETAIL: Detail redacted as it may contain sensitive data. Specify 'Include Error
 2025-06-13 18:56:26,423 [21] INFO  GymFit.BE.Controllers.UsersController - Creating user: seby.boiciuc05@e-uvt.ro
 2025-06-13 18:56:26,424 [21] ERROR GymFit.BE.Controllers.UsersController - ❌ Invalid model state for user creation
 2025-06-13 18:57:25,689 [16] INFO  GymFit.BE.Controllers.UsersController - Getting all users
+2025-06-13 19:16:17,612 [11] INFO  GymFit.BE.Controllers.UsersController - Getting all users
+2025-06-13 19:19:23,995 [14] INFO  AuthController - Register attempt for email: seby.boiciuc05@e-uvt.ro
+2025-06-13 19:19:24,081 [14] ERROR AuthController - Register failed: email already exists seby.boiciuc05@e-uvt.ro
+2025-06-13 19:21:57,348 [24] INFO  AuthController - Register attempt for email: seby.boiciuc05@e-uvt.ro
+2025-06-13 19:21:57,637 [24] ERROR AuthController - Register failed: email already exists seby.boiciuc05@e-uvt.ro
+2025-06-13 19:24:18,111 [11] INFO  AuthController - Register attempt for email: seby.boiciuc05@e-uvt.ro
+2025-06-13 19:24:18,871 [11] ERROR AuthController - Register failed: email already exists seby.boiciuc05@e-uvt.ro
+2025-06-13 19:27:12,071 [11] INFO  GymFit.BE.Controllers.UsersController - Getting all users
+2025-06-13 19:28:08,144 [18] INFO  AuthController - Login attempt for email: seby.boiciuc04@e-uvt.ro
+2025-06-13 19:28:08,204 [18] INFO  GymFit.BE.Services.JwtService - Generated JWT token for user seby.boiciuc04@e-uvt.ro (id: 12)
+2025-06-13 19:28:08,206 [18] INFO  AuthController - Login successful for user seby.boiciuc04@e-uvt.ro
+2025-06-13 19:28:14,353 [18] INFO  AuthController - Login attempt for email: seby.boiciu04@e-uvt.ro
+2025-06-13 19:28:14,379 [18] ERROR AuthController - Login failed: user not found for email seby.boiciu04@e-uvt.ro
+2025-06-13 19:29:23,578 [11] INFO  AuthController - Register attempt for email: seby.boiciuc05@e-uvt.ro
+2025-06-13 19:29:24,433 [11] ERROR AuthController - Register failed: email already exists seby.boiciuc05@e-uvt.ro
+2025-06-13 19:29:48,608 [11] INFO  AuthController - Register attempt for email: seby.boiciuc05@e-uvt.ro
+2025-06-13 19:29:49,403 [11] ERROR AuthController - Register failed: email already exists seby.boiciuc05@e-uvt.ro
+2025-06-13 19:31:47,431 [11] INFO  AuthController - Register attempt for email: seby.boiciuc05@e-uvt.ro
+2025-06-13 19:31:48,380 [11] ERROR AuthController - Register failed: email already exists seby.boiciuc05@e-uvt.ro
+2025-06-13 19:33:24,206 [11] INFO  AuthController - Register attempt for email: seby.boiciuc05@e-uvt.ro
+2025-06-13 19:33:25,016 [11] ERROR AuthController - Register failed: email already exists seby.boiciuc05@e-uvt.ro
+2025-06-13 19:36:18,040 [11] INFO  AuthController - Register attempt for email: seby.boiciuc05@e-uvt.ro
+2025-06-13 19:36:18,847 [12] ERROR AuthController - Register failed: email already exists seby.boiciuc05@e-uvt.ro
+2025-06-13 19:37:08,504 [14] INFO  AuthController - Register attempt for email: seby.boiciuc05@e-uvt.ro
+2025-06-13 19:37:08,544 [14] ERROR AuthController - Register failed: email already exists seby.boiciuc05@e-uvt.ro
+2025-06-13 19:37:12,360 [14] INFO  AuthController - Login attempt for email: seby.boiciuc05@e-uvt.ro
+2025-06-13 19:37:12,411 [14] ERROR AuthController - Login failed: wrong password for email seby.boiciuc05@e-uvt.ro
+2025-06-13 19:37:23,301 [14] INFO  AuthController - Register attempt for email: seby.boiciuc05@e-uvt.ro
+2025-06-13 19:37:23,335 [14] ERROR AuthController - Register failed: email already exists seby.boiciuc05@e-uvt.ro
+2025-06-13 19:37:42,939 [11] INFO  AuthController - Register attempt for email: seby.boiciuc05@e-uvt.ro
+2025-06-13 19:37:43,760 [11] ERROR AuthController - Register failed: email already exists seby.boiciuc05@e-uvt.ro
+2025-06-13 19:37:52,891 [11] INFO  AuthController - Register attempt for email: seby.boiciuc04@e-uvt.ro
+2025-06-13 19:37:52,930 [11] ERROR AuthController - Register failed: email already exists seby.boiciuc04@e-uvt.ro
+2025-06-13 19:37:55,573 [7] INFO  AuthController - Register attempt for email: seby.boiciuc03@e-uvt.ro
+2025-06-13 19:37:55,723 [7] INFO  AuthController - User registered successfully: seby.boiciuc03@e-uvt.ro (id: 14)
+2025-06-13 19:38:02,489 [7] INFO  GymFit.BE.Controllers.UsersController - Getting all users
+2025-06-13 19:38:19,795 [11] INFO  AuthController - Login attempt for email: seby.boiciu03@e-uvt.ro
+2025-06-13 19:38:19,838 [11] ERROR AuthController - Login failed: user not found for email seby.boiciu03@e-uvt.ro
+2025-06-13 19:39:47,959 [11] INFO  AuthController - Login attempt for email: seby.boiciu03@e-uvt.ro
+2025-06-13 19:39:48,734 [11] ERROR AuthController - Login failed: user not found for email seby.boiciu03@e-uvt.ro
+2025-06-13 19:40:00,209 [11] INFO  AuthController - Login attempt for email: seby.boiciu03@e-uvt.ro
+2025-06-13 19:40:00,267 [11] ERROR AuthController - Login failed: user not found for email seby.boiciu03@e-uvt.ro
+2025-06-13 19:40:04,601 [11] INFO  AuthController - Login attempt for email: seby.boiciu03@e-uvt.ro
+2025-06-13 19:40:04,653 [11] ERROR AuthController - Login failed: user not found for email seby.boiciu03@e-uvt.ro
+2025-06-13 19:40:15,721 [11] INFO  GymFit.BE.Controllers.UsersController - Getting all users
+2025-06-13 19:40:26,437 [10] INFO  AuthController - Login attempt for email: seby.boiciuc03@e-uvt.ro
+2025-06-13 19:40:26,475 [10] ERROR AuthController - Login failed: wrong password for email seby.boiciuc03@e-uvt.ro
+2025-06-13 19:40:28,780 [11] INFO  AuthController - Login attempt for email: seby.boiciuc03@e-uvt.ro
+2025-06-13 19:40:28,822 [11] INFO  GymFit.BE.Services.JwtService - Generated JWT token for user seby.boiciuc03@e-uvt.ro (id: 14)
+2025-06-13 19:40:28,824 [11] INFO  AuthController - Login successful for user seby.boiciuc03@e-uvt.ro
+2025-06-13 19:43:51,010 [11] INFO  AuthController - Login attempt for email: seby.boiciuc03@e-uvt.ro
+2025-06-13 19:43:51,957 [11] INFO  GymFit.BE.Services.JwtService - Generated JWT token for user seby.boiciuc03@e-uvt.ro (id: 14)
+2025-06-13 19:43:51,963 [11] INFO  AuthController - Login successful for user seby.boiciuc03@e-uvt.ro
+2025-06-13 19:43:54,508 [7] INFO  AuthController - Login attempt for email: seby.boiciuc02@e-uvt.ro
+2025-06-13 19:43:54,543 [7] ERROR AuthController - Login failed: user not found for email seby.boiciuc02@e-uvt.ro
+2025-06-13 19:43:58,288 [13] INFO  AuthController - Login attempt for email: seby.boiciuc03@e-uvt.ro
+2025-06-13 19:43:58,378 [13] INFO  GymFit.BE.Services.JwtService - Generated JWT token for user seby.boiciuc03@e-uvt.ro (id: 14)
+2025-06-13 19:43:58,378 [13] INFO  AuthController - Login successful for user seby.boiciuc03@e-uvt.ro
+2025-06-13 19:44:08,666 [13] INFO  AuthController - Register attempt for email: seby.boiciuc03@e-uvt.ro
+2025-06-13 19:44:08,698 [13] ERROR AuthController - Register failed: email already exists seby.boiciuc03@e-uvt.ro
+2025-06-13 19:44:32,408 [13] INFO  AuthController - Register attempt for email: seby.boiciuc02@e-uvt.ro
+2025-06-13 19:44:32,570 [13] INFO  AuthController - User registered successfully: seby.boiciuc02@e-uvt.ro (id: 15)
+2025-06-13 19:44:48,615 [13] INFO  GymFit.BE.Controllers.UsersController - Getting all users
