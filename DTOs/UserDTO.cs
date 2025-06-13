@@ -24,11 +24,26 @@ namespace GymFit.BE.DTOs
     // DTO pentru crearea unui user nou - ce primești de la frontend
     public class CreateUserDTO
     {
+        [Required(ErrorMessage = "Name is required")]
+        [StringLength(100, MinimumLength = 2, ErrorMessage = "Name must be between 2 and 100 characters")]
         public string Name { get; set; } = string.Empty;
+        
+        [Required(ErrorMessage = "Email is required")]
+        [EmailAddress(ErrorMessage = "Invalid email format")]
         public string Email { get; set; } = string.Empty;
+        
+        [Required(ErrorMessage = "Password is required")]
+        [StringLength(100, MinimumLength = 6, ErrorMessage = "Password must be at least 6 characters long")]
         public string Password { get; set; } = string.Empty;
+        
+        [Required(ErrorMessage = "Phone Number is required")]
+        [StringLength(100, MinimumLength = 9, ErrorMessage = "Phone number must be at least 9 characters long")]
         public string PhoneNumber { get; set; } = string.Empty;
+        
+        [Required(ErrorMessage = "Role is required")]
         public Role UserRole { get; set; }
+        
+        [Required(ErrorMessage = "Date Of Birth is required")]
         public DateOnly DateOfBirth { get; set; }
     }
 
