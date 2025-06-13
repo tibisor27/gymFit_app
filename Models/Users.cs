@@ -32,6 +32,10 @@ namespace GymFit.BE.Models
     [DataType(DataType.Date)]
     [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
     public DateOnly DateOfBirth { get; set; }
+    
+    // 🔗 Navigational Properties pentru relații
+    public Trainer? TrainerDetails { get; set; }  // null dacă nu e trainer
+    public Member? MemberDetails { get; set; }    // null dacă nu e member
 }
 
     public enum Role

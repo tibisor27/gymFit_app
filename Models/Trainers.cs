@@ -3,7 +3,7 @@ using GymFit.BE.Models;
 
 namespace GymFit.BE.Models
 {
-    public class Trainers
+    public class Trainer
     {
         [Key]
         public int Id { get; set; }

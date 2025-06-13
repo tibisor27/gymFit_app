@@ -2,7 +2,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace GymFit.BE.Models
 {
-    public class Members
+    public class Member
     {
         [Key]
         public int Id { get; set; }
@@ -12,6 +12,5 @@ namespace GymFit.BE.Models
         public User User { get; set; } = null!;
 
         public bool IsActive { get; set; } = true;
-        public DateTime JoinedAt { get; set; } = DateTime.Now;
     }
 }
