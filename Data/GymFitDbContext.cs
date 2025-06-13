@@ -11,8 +11,8 @@ namespace GymFit.BE.Data
 
         // DbSets pentru modelele esențiale - SIMPLU!
         public DbSet<User> Users { get; set; }
-        public DbSet<Members> Members { get; set; }
-        public DbSet<Trainers> Trainers { get; set; }
+        public DbSet<Member> Members { get; set; }
+        public DbSet<Trainer> Trainers { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -36,7 +36,7 @@ namespace GymFit.BE.Data
             });
 
             // Configure Members entity
-            modelBuilder.Entity<Members>(entity =>
+            modelBuilder.Entity<Member>(entity =>
             {
                 entity.HasKey(e => e.Id);
                 entity.HasOne(e => e.User)
@@ -46,7 +46,7 @@ namespace GymFit.BE.Data
             });
 
             // Configure Trainers entity
-            modelBuilder.Entity<Trainers>(entity =>
+            modelBuilder.Entity<Trainer>(entity =>
             {
                 entity.HasKey(e => e.Id);
                 entity.Property(e => e.Experience).HasMaxLength(200);
