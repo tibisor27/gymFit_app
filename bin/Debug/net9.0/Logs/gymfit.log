@@ -797,3 +797,13 @@ DETAIL: Detail redacted as it may contain sensitive data. Specify 'Include Error
 2025-06-13 19:44:32,408 [13] INFO  AuthController - Register attempt for email: seby.boiciuc02@e-uvt.ro
 2025-06-13 19:44:32,570 [13] INFO  AuthController - User registered successfully: seby.boiciuc02@e-uvt.ro (id: 15)
 2025-06-13 19:44:48,615 [13] INFO  GymFit.BE.Controllers.UsersController - Getting all users
+2025-06-13 20:31:29,184 [11] INFO  AuthController - Login attempt for email: seby.boiciuc03@e-uvt.ro
+2025-06-13 20:31:30,189 [11] INFO  GymFit.BE.Services.JwtService - Generated JWT token for user seby.boiciuc03@e-uvt.ro (id: 14)
+2025-06-13 20:31:30,192 [11] INFO  AuthController - Login successful for user seby.boiciuc03@e-uvt.ro
+2025-06-13 20:31:39,008 [11] INFO  GymFit.BE.Controllers.UsersController - Getting all users
+2025-06-13 20:33:11,442 [11] INFO  TrainersController - 🏋️ POST trainer for user 15
+2025-06-13 20:33:11,442 [11] ERROR TrainersController - Invalid model state for trainer creation
+2025-06-13 20:33:30,151 [11] INFO  TrainersController - 🏋️ POST trainer for user 15
+2025-06-13 20:33:30,381 [11] INFO  TrainersController - ✅ Trainer created successfully: ID 4 for user 15
+2025-06-13 20:33:34,582 [11] INFO  GymFit.BE.Controllers.UsersController - Getting all users
+2025-06-13 20:33:42,868 [15] INFO  TrainersController - Getting all trainers
