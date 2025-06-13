@@ -81,16 +81,25 @@ namespace GymFit.BE.Controllers
             }
         }
 
+        [HttpPost]
         public async Task<IActionResult> Post([FromBody] CreateUserDTO createUserDTO)
         {
             try
             {
                 _logger.Info("=== POST REQUEST STARTED ===");
-                _logger.Info($"Creating user: {createUserDTO.Email}");
+                _logger.Info($"Creating user: {createUserDTO?.Email ?? "NULL DTO"}");
                 
                 if (createUserDTO == null)
                 {
+                    _logger.Error("❌ CreateUserDTO is null");
                     return BadRequest("User data is required");
+                }
+
+                // 🛡️ Validez modelul cu Data Annotations
+                if (!ModelState.IsValid)
+                {
+                    _logger.Error("❌ Invalid model state for user creation");
+                    return BadRequest(ModelState);
                 }
 
                 var existingUser = await _context.Users.FirstOrDefaultAsync(u => u.Email == createUserDTO.Email);
@@ -265,12 +274,12 @@ namespace GymFit.BE.Controllers
                     DateOfBirth = existingUser.DateOfBirth
                 };
                 
-                _logger.Info($"✅ User {key} updated successfully");
+                _logger.Info($" User {key} updated successfully");
                 return Ok(userDTO);
             }
             catch (Exception ex)
             {
-                _logger.Error($"❌ Error in PATCH user {key}: {ex.Message}");
+                _logger.Error($" Error in PATCH user {key}: {ex.Message}");
                 return StatusCode(500, "Internal server error");
             }
         }
