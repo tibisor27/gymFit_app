@@ -3,6 +3,7 @@ using System;
 using GymFit.BE.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
@@ -11,9 +12,11 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace GymFit.BE.Migrations
 {
     [DbContext(typeof(GymFitDbContext))]
-    partial class GymFitDbContextModelSnapshot : ModelSnapshot
+    [Migration("20250613074734_FixTrainerMemberRelationships")]
+    partial class FixTrainerMemberRelationships
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
