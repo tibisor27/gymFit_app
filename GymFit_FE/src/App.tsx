@@ -5,6 +5,7 @@ import { AdminDashboard } from './components/AdminDashboard';
 import { AdminTrainers } from './components/AdminTrainers';
 import { AdminMembers } from './components/AdminMembers';
 import { LoginForm } from './components/LoginForm';
+import { RegisterForm } from './components/RegisterForm';
 import { AuthProvider, useAuth } from './context/authContext';
 import { Trainers } from './components/Trainers';
 
@@ -54,6 +55,7 @@ function AppRoutes() {
   return (
     <Routes>
       <Route path="/login" element={<LoginForm />} />
+      <Route path="/register" element={<RegisterForm />} />
       <Route 
         path="/" 
         element={

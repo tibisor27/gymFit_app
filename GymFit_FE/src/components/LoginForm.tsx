@@ -129,12 +129,13 @@ export const LoginForm: React.FC = () => {
         <div className="mt-6 text-center">
           <p className="text-sm text-gray-600">
             Don't have an account?{' '}
-            <a 
-              href="#"
+            <button
+              onClick={() => navigate('/register')}
               className="font-medium text-blue-600 hover:text-blue-500"
+              disabled={loading}
             >
-              Contact admin
-            </a>
+              Sign up here
+            </button>
           </p>
         </div>
       </div>
