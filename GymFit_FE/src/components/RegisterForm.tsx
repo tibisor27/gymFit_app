@@ -74,7 +74,7 @@ export const RegisterForm: React.FC = () => {
     if (!formData.phoneNumber.trim()) {
       newErrors.phoneNumber = ['Phone number is required'];
     } else if (!/^(\+4|0)[0-9]{9}$/.test(formData.phoneNumber)) {
-      newErrors.phoneNumber = ['Phone number must be in Romanian format (+40xxxxxxxxx or 07xxxxxxxx)'];
+      newErrors.phoneNumber = ['Phone number must be in valid format (+40xxxxxxxxx or 07xxxxxxxx)'];
     }
     
     // Date of birth validation
@@ -185,7 +185,7 @@ export const RegisterForm: React.FC = () => {
       <div className="bg-white rounded-2xl shadow-xl p-8 w-full max-w-md">
         <div className="text-center mb-8">
           <h1 className="text-3xl font-bold text-gray-900 mb-2">
-            🏋️ Join GymFit
+             Join GymFit
           </h1>
           <p className="text-gray-600">
             Create your account to get started

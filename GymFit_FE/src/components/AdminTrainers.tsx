@@ -36,14 +36,14 @@ export const AdminTrainers: React.FC = () => {
   };
 
   const handleDelete = async (trainerId: number) => {
-    if (window.confirm('Ești sigur că vrei să ștergi acest antrenor?')) {
+          if (window.confirm('Are you sure you want to delete this trainer?')) {
       try {
         await trainerService.deleteTrainer(trainerId);
         setTrainers(trainers.filter(trainer => trainer.Id !== trainerId));
-        alert('Antrenor șters cu succes!');
+                  alert('Trainer deleted successfully!');
       } catch (error) {
         console.error('Error deleting trainer:', error);
-        alert('Eroare la ștergerea antrenorului!');
+                  alert('Error deleting trainer!');
       }
     }
   };
@@ -58,12 +58,12 @@ export const AdminTrainers: React.FC = () => {
 
     // ✅ Validare frontend
     if (editingTrainer.Experience && editingTrainer.Experience.length < 5) {
-      alert('Experiența trebuie să aibă minim 5 caractere!');
+              alert('Experience must have at least 5 characters!');
       return;
     }
 
     if (editingTrainer.Introduction && editingTrainer.Introduction.length < 10) {
-      alert('Introducerea trebuie să aibă minim 10 caractere!');
+              alert('Introduction must have at least 10 characters!');
       return;
     }
 
@@ -72,10 +72,10 @@ export const AdminTrainers: React.FC = () => {
       await fetchTrainers(); // Refresh list
       setShowEditModal(false);
       setEditingTrainer(null);
-      alert('Antrenor actualizat cu succes!');
+              alert('Trainer updated successfully!');
     } catch (error) {
       console.error('Error updating trainer:', error);
-      alert('Eroare la actualizarea antrenorului!');
+              alert('Error updating trainer!');
     }
   };
 
@@ -104,17 +104,17 @@ export const AdminTrainers: React.FC = () => {
           <div className="flex items-center justify-between">
             <div>
               <h1 className="text-3xl font-bold text-gray-900 mb-2">
-                👑 Gestionează Antrenori
+                👑 Manage Trainers
               </h1>
               <p className="text-gray-600">
-                {trainers.length} antrenori înregistrați
+                                  {trainers.length} registered trainers
               </p>
             </div>
             <button
               onClick={() => navigate('/dashboard')}
               className="bg-gray-600 hover:bg-gray-700 text-white px-4 py-2 rounded text-sm transition-colors"
             >
-              ← Înapoi la Dashboard
+              ← Back to Dashboard
             </button>
           </div>
         </div>
@@ -124,7 +124,7 @@ export const AdminTrainers: React.FC = () => {
       <div className="max-w-7xl mx-auto px-6 py-8">
         {trainers.length === 0 ? (
           <div className="text-center py-16">
-            <p className="text-gray-500 text-lg">Nu sunt antrenori înregistrați</p>
+                          <p className="text-gray-500 text-lg">No registered trainers</p>
           </div>
         ) : (
           <div className="bg-white rounded-lg border overflow-hidden">
@@ -133,16 +133,16 @@ export const AdminTrainers: React.FC = () => {
                 <thead className="bg-gray-50">
                   <tr>
                     <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                      Antrenor
+                      Trainer
                     </th>
                     <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                       Contact
                     </th>
                     <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                      Experiență
+                      Experience
                     </th>
                     <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                      Acțiuni
+                      Actions
                     </th>
                   </tr>
                 </thead>
@@ -203,13 +203,13 @@ export const AdminTrainers: React.FC = () => {
         <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
           <div className="bg-white rounded-lg p-6 w-full max-w-md mx-4">
             <h3 className="text-lg font-semibold text-gray-900 mb-4">
-              Editează Antrenor
+              Edit Trainer
             </h3>
             
             <div className="space-y-4">
               <div>
                 <label className="block text-sm font-medium text-gray-700 mb-1">
-                  Nume
+                  Name
                 </label>
                 <input
                   type="text"
@@ -233,7 +233,7 @@ export const AdminTrainers: React.FC = () => {
               
               <div>
                 <label className="block text-sm font-medium text-gray-700 mb-1">
-                  Telefon
+                  Phone
                 </label>
                 <input
                   type="text"
@@ -245,7 +245,7 @@ export const AdminTrainers: React.FC = () => {
               
               <div>
                 <label className="block text-sm font-medium text-gray-700 mb-1">
-                  Experiență
+                  Experience
                 </label>
                 <input
                   type="text"
@@ -257,7 +257,7 @@ export const AdminTrainers: React.FC = () => {
               
               <div>
                 <label className="block text-sm font-medium text-gray-700 mb-1">
-                  Introducere
+                  Introduction
                 </label>
                 <textarea
                   value={editingTrainer.Introduction}
@@ -276,13 +276,13 @@ export const AdminTrainers: React.FC = () => {
                 }}
                 className="px-4 py-2 text-gray-700 border border-gray-300 rounded hover:bg-gray-50 transition-colors"
               >
-                Anulează
+                Cancel
               </button>
               <button
                 onClick={handleSaveEdit}
                 className="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700 transition-colors"
               >
-                Salvează
+                Save
               </button>
             </div>
           </div>
