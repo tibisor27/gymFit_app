@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import { useAuth } from '../context/authContext';
 
-// 📝 Register Component - handles user registration
+// Register Component - handles user registration
 export const RegisterForm: React.FC = () => {
   const navigate = useNavigate();
   const { login } = useAuth();
@@ -165,9 +165,8 @@ export const RegisterForm: React.FC = () => {
   
   if (success) {
     return (
-      <div className="min-h-screen bg-gradient-to-br from-blue-900 via-purple-900 to-indigo-900 flex items-center justify-center p-4">
-        <div className="bg-white rounded-2xl shadow-xl p-8 w-full max-w-md text-center">
-          <div className="text-6xl mb-4">🎉</div>
+      <div className="min-h-screen bg-gray-50 flex items-center justify-center p-4">
+        <div className="bg-white rounded-lg border border-gray-200 shadow-sm p-8 w-full max-w-md text-center">
           <h1 className="text-2xl font-bold text-gray-900 mb-2">
             Registration Successful!
           </h1>
@@ -181,12 +180,12 @@ export const RegisterForm: React.FC = () => {
   }
   
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-900 via-purple-900 to-indigo-900 flex items-center justify-center p-4">
-      <div className="bg-white rounded-2xl shadow-xl p-8 w-full max-w-md">
+    <div className="min-h-screen bg-gray-50 flex items-center justify-center p-4">
+      <div className="bg-white rounded-lg border border-gray-200 shadow-sm p-8 w-full max-w-md">
         <div className="text-center mb-8">
-          <h1 className="text-3xl font-bold text-gray-900 mb-2">
-             Join GymFit
-          </h1>
+                      <h1 className="text-3xl font-bold text-gray-900 mb-2">
+              Join GymFit
+            </h1>
           <p className="text-gray-600">
             Create your account to get started
           </p>

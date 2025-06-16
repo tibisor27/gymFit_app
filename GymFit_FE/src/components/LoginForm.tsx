@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import { useAuth } from '../context/authContext';
 
-// 🔑 Login Component - handles authentication
+// Login Component - handles authentication
 export const LoginForm: React.FC = () => {
   const navigate = useNavigate();
   const { login } = useAuth();
@@ -60,11 +60,11 @@ export const LoginForm: React.FC = () => {
   };
   
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-900 via-purple-900 to-indigo-900 flex items-center justify-center p-4">
-      <div className="bg-white rounded-2xl shadow-xl p-8 w-full max-w-md">
+    <div className="min-h-screen bg-gray-50 flex items-center justify-center p-4">
+              <div className="bg-white rounded-lg border border-gray-200 shadow-sm p-8 w-full max-w-md">
         <div className="text-center mb-8">
           <h1 className="text-3xl font-bold text-gray-900 mb-2">
-            🏋️ GymFit Login
+            GymFit Login
           </h1>
           <p className="text-gray-600">
             Sign in to your account
@@ -80,7 +80,7 @@ export const LoginForm: React.FC = () => {
             </div>
           )}
           
-          {/* 📧 Email input */}
+          {/* Email input */}
           <div>
             <label htmlFor="email" className="block text-sm font-medium text-gray-700">
               Email Address
@@ -98,7 +98,7 @@ export const LoginForm: React.FC = () => {
             />
           </div>
           
-          {/* 🔒 Password input */}
+          {/* Password input */}
           <div>
             <label htmlFor="password" className="block text-sm font-medium text-gray-700">
               Password

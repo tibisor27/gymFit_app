@@ -25,16 +25,16 @@ export const Trainers = () => {
 
     if (loading) {
         return (
-            <div className="min-h-screen bg-gray-50 flex items-center justify-center">
+            <div className="min-h-screen bg-white flex items-center justify-center">
                 <div className="text-gray-600 text-lg">Loading...</div>
             </div>
         );
     }
 
     return (
-        <div className="min-h-screen bg-gray-50">
+        <div className="min-h-screen bg-white">
             {/* Header */}
-            <div className="bg-white border-b">
+            <div className="bg-white border-b border-gray-200">
                 <div className="max-w-6xl mx-auto px-6 py-8">
                     <div className="flex items-center justify-between">
                         <div>
@@ -68,11 +68,11 @@ export const Trainers = () => {
                         {trainers.map((trainer: any) => (
                             <div 
                                 key={trainer.Id}
-                                className="bg-white rounded-lg border border-gray-200 p-6 hover:shadow-md transition-shadow"
+                                className="bg-white border border-gray-200 rounded-lg p-6 hover:border-gray-300 transition-colors"
                             >
                                 {/* Avatar */}
                                 <div className="flex justify-center mb-4">
-                                    <div className="w-16 h-16 bg-gray-200 rounded-full flex items-center justify-center text-xl font-semibold text-gray-600">
+                                    <div className="w-16 h-16 bg-gray-100 rounded-full flex items-center justify-center text-xl font-semibold text-gray-600">
                                         {trainer.TrainerName?.charAt(0) || '?'}
                                     </div>
                                 </div>
@@ -83,7 +83,7 @@ export const Trainers = () => {
                                         {trainer.TrainerName}
                                     </h3>
                                     
-                                    <span className="inline-block bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-sm mb-4">
+                                    <span className="inline-block bg-gray-50 text-gray-700 px-3 py-1 rounded-full text-sm mb-4">
                                         {trainer.Experience}
                                     </span>
 
@@ -101,7 +101,7 @@ export const Trainers = () => {
 
                                     {/* Action Buttons */}
                                     <div className="space-y-2">
-                                        <button className="w-full bg-blue-600 hover:bg-blue-700 text-white py-2 px-4 rounded text-sm transition-colors">
+                                        <button className="w-full bg-gray-900 hover:bg-gray-800 text-white py-2 px-4 rounded text-sm transition-colors">
                                             Schedule
                                         </button>
                                         <button className="w-full border border-gray-300 hover:bg-gray-50 text-gray-700 py-2 px-4 rounded text-sm transition-colors">
