@@ -26,7 +26,7 @@ export const Trainers = () => {
     if (loading) {
         return (
             <div className="min-h-screen bg-gray-50 flex items-center justify-center">
-                <div className="text-gray-600 text-lg">Se încarcă...</div>
+                <div className="text-gray-600 text-lg">Loading...</div>
             </div>
         );
     }
@@ -39,17 +39,17 @@ export const Trainers = () => {
                     <div className="flex items-center justify-between">
                         <div>
                             <h1 className="text-3xl font-bold text-gray-900 mb-2">
-                                Antrenori
+                                Trainers
                             </h1>
                             <p className="text-gray-600">
-                                {trainers.length} antrenori disponibili
+                                {trainers.length} available trainers
                             </p>
                         </div>
                         <button
                             onClick={() => navigate('/')}
                             className="bg-gray-600 hover:bg-gray-700 text-white px-4 py-2 rounded text-sm transition-colors"
                         >
-                            ← Înapoi
+                            ← Back
                         </button>
                     </div>
                 </div>
@@ -60,7 +60,7 @@ export const Trainers = () => {
                 {trainers.length === 0 ? (
                     <div className="text-center py-16">
                         <p className="text-gray-500 text-lg">
-                            Nu sunt antrenori înregistrați
+                            No registered trainers
                         </p>
                     </div>
                 ) : (
@@ -102,7 +102,7 @@ export const Trainers = () => {
                                     {/* Action Buttons */}
                                     <div className="space-y-2">
                                         <button className="w-full bg-blue-600 hover:bg-blue-700 text-white py-2 px-4 rounded text-sm transition-colors">
-                                            Programează
+                                            Schedule
                                         </button>
                                         <button className="w-full border border-gray-300 hover:bg-gray-50 text-gray-700 py-2 px-4 rounded text-sm transition-colors">
                                             Contact

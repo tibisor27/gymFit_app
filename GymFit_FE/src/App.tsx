@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Route, Routes, Navigate } from 'react-router-d
 import { Dashboard } from './components/Dashboard';
 import { AdminDashboard } from './components/AdminDashboard';
 import { AdminTrainers } from './components/AdminTrainers';
+import { AdminMembers } from './components/AdminMembers';
 import { LoginForm } from './components/LoginForm';
 import { AuthProvider, useAuth } from './context/authContext';
 import { Trainers } from './components/Trainers';
@@ -14,7 +15,7 @@ const PrivateRoute = ({ children }: { children: React.ReactNode }) => {
   if (loading) {
     return (
       <div className="min-h-screen bg-gray-50 flex items-center justify-center">
-        <div className="text-gray-600 text-lg">Se încarcă...</div>
+        <div className="text-gray-600 text-lg">Loading...</div>
       </div>
     );
   }
@@ -45,7 +46,7 @@ function AppRoutes() {
   if (loading) {
     return (
       <div className="min-h-screen bg-gray-50 flex items-center justify-center">
-        <div className="text-gray-600 text-lg">Se încarcă...</div>
+        <div className="text-gray-600 text-lg">Loading...</div>
       </div>
     );
   }
@@ -78,6 +79,14 @@ function AppRoutes() {
         element={
           <PrivateRoute>
             <AdminTrainers />
+          </PrivateRoute>
+        } 
+      />
+      <Route 
+        path="/admin/members" 
+        element={
+          <PrivateRoute>
+            <AdminMembers />
           </PrivateRoute>
         } 
       />

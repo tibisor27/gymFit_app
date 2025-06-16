@@ -23,25 +23,25 @@ export const Dashboard: React.FC = () => {
   // 🔄 Afișez loading în timp ce se încarcă datele
   if (loading) return (
     <div className="min-h-screen bg-gradient-to-br from-blue-900 via-purple-900 to-indigo-900 flex items-center justify-center">
-      <div className="text-white text-xl">Se încarcă...</div>
+      <div className="text-white text-xl">Loading...</div>
     </div>
   );
 
   // ❌ Dacă e eroare
   if (error) return (
     <div className="min-h-screen bg-gradient-to-br from-blue-900 via-purple-900 to-indigo-900 flex items-center justify-center">
-      <div className="text-red-400 text-xl">Eroare: {error}</div>
+      <div className="text-red-400 text-xl">Error: {error}</div>
     </div>
   );
 
   // ❌ Dacă nu e user (de exemplu nu e logat)
   if (!user) return (
     <div className="min-h-screen bg-gradient-to-br from-blue-900 via-purple-900 to-indigo-900 flex items-center justify-center">
-      <div className="text-white text-xl">Nu ești autentificat!</div>
+      <div className="text-white text-xl">Not authenticated!</div>
     </div>
   );
 
-  // �� Helper simplu pentru rol
+  // 📊 Helper simplu pentru rol
   const getRoleInfo = (role: string) => {
     switch (role) {
       case 'Admin': return { icon: '👑', color: 'text-purple-600' };
@@ -71,7 +71,7 @@ export const Dashboard: React.FC = () => {
                 onClick={() => navigate('/trainers')}
                 className="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded text-sm transition-colors"
               >
-                Antrenori
+                Trainers
               </button>
               <span className="text-sm text-gray-600">
                 <span className="font-semibold">{user.Name}</span>
@@ -89,80 +89,56 @@ export const Dashboard: React.FC = () => {
 
       {/* Main Content */}
       <div className="max-w-7xl mx-auto px-6 py-8">
-        
-        {/* User Profile Card */}
-        <div className="bg-white rounded-lg border p-6 mb-8">
-          <h2 className="text-2xl font-bold text-gray-900 mb-4">
-            Profilul Tău
-          </h2>
-          
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <div>
-              <h3 className="text-lg font-medium text-gray-900 mb-3">
-                Informații Personale
-              </h3>
-              <div className="space-y-2">
-                <div className="flex items-center">
-                  <span className="text-2xl mr-3">{roleInfo.icon}</span>
-                  <div>
-                    <p className="text-sm text-gray-600">Nume</p>
-                    <p className="font-medium">{user?.Name}</p>
-                  </div>
-                </div>
-                
-                <div className="flex items-center">
-                  <span className="text-2xl mr-3">📧</span>
-                  <div>
-                    <p className="text-sm text-gray-600">Email</p>
-                    <p className="font-medium">{user?.Email}</p>
-                  </div>
-                </div>
-                
-                <div className="flex items-center">
-                  <span className="text-2xl mr-3">📱</span>
-                  <div>
-                    <p className="text-sm text-gray-600">Telefon</p>
-                    <p className="font-medium">{user?.PhoneNumber || 'Nu este setat'}</p>
-                  </div>
-                </div>
-              </div>
+        {/* User Info Card */}
+        <div className="bg-white rounded-lg border p-8 mb-8">
+          <div className="flex items-center space-x-6">
+            <div className={`text-6xl ${roleInfo.color}`}>
+              {roleInfo.icon}
             </div>
-
             <div>
-              <h3 className="text-lg font-medium text-gray-900 mb-3">
-                Detalii Cont
-              </h3>
-              <div className="space-y-2">
-                <div className="flex items-center">
-                  <span className="text-2xl mr-3">🎭</span>
-                  <div>
-                    <p className="text-sm text-gray-600">Rol</p>
-                    <p className={`font-medium ${roleInfo.color}`}>
-                      {user?.UserRole}
-                    </p>
-                  </div>
-                </div>
-                
-                <div className="flex items-center">
-                  <span className="text-2xl mr-3">🎂</span>
-                  <div>
-                    <p className="text-sm text-gray-600">Data Nașterii</p>
-                    <p className="font-medium">{user?.DateOfBirth || 'Nu este setată'}</p>
-                  </div>
-                </div>
-                
-                <div className="flex items-center">
-                  <span className="text-2xl mr-3">🆔</span>
-                  <div>
-                    <p className="text-sm text-gray-600">ID Utilizator</p>
-                    <p className="font-medium">#{user?.Id}</p>
-                  </div>
-                </div>
+              <h2 className="text-2xl font-bold text-gray-900 mb-2">
+                Welcome, {user.Name}!
+              </h2>
+              <div className="space-y-1">
+                <p className="text-gray-600">
+                  <span className="font-medium">Email:</span> {user.Email}
+                </p>
+                <p className="text-gray-600">
+                  <span className="font-medium">Role:</span> 
+                  <span className={`ml-2 px-3 py-1 rounded-full text-sm font-medium bg-gray-100 ${roleInfo.color}`}>
+                    {user.UserRole}
+                  </span>
+                </p>
+                {user.PhoneNumber && (
+                  <p className="text-gray-600">
+                    <span className="font-medium">Phone:</span> {user.PhoneNumber}
+                  </p>
+                )}
               </div>
             </div>
           </div>
         </div>
 
+        {/* Quick Actions */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="bg-white rounded-lg border p-6 hover:shadow-md transition-shadow cursor-pointer">
+            <div className="text-3xl mb-4">📅</div>
+            <h3 className="text-lg font-semibold text-gray-900 mb-2">Schedule</h3>
+            <p className="text-gray-600 text-sm">View your workout schedule and upcoming sessions</p>
+          </div>
+
+          <div className="bg-white rounded-lg border p-6 hover:shadow-md transition-shadow cursor-pointer">
+            <div className="text-3xl mb-4">💪</div>
+            <h3 className="text-lg font-semibold text-gray-900 mb-2">Workouts</h3>
+            <p className="text-gray-600 text-sm">Browse workout plans and track your progress</p>
+          </div>
+
+          <div className="bg-white rounded-lg border p-6 hover:shadow-md transition-shadow cursor-pointer">
+            <div className="text-3xl mb-4">👥</div>
+            <h3 className="text-lg font-semibold text-gray-900 mb-2">Community</h3>
+            <p className="text-gray-600 text-sm">Connect with other gym members and trainers</p>
+          </div>
+        </div>
       </div>
     </div>
   );

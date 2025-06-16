@@ -89,11 +89,11 @@ export const AdminTrainers: React.FC = () => {
   };
 
   if (loading) {
-    return (
-      <div className="min-h-screen bg-gray-50 flex items-center justify-center">
-        <div className="text-gray-600 text-lg">Se încarcă...</div>
-      </div>
-    );
+          return (
+        <div className="min-h-screen bg-gray-50 flex items-center justify-center">
+          <div className="text-gray-600 text-lg">Loading...</div>
+        </div>
+      );
   }
 
   return (
